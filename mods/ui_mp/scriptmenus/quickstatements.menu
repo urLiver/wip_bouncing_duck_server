@@ -1,0 +1,22 @@
+#include "ui/style/window.inc"
+#include "ui/style/defines.inc"
+
+#include "ui/pages/prestige.inc"
+#include "ui/pages/cardtitles.inc"
+#include "ui/pages/information.inc"
+#include "ui/pages/mod_settings.inc"
+
+#include "ui/pages/main.inc"
+#include "ui/pages/map.inc"
+
+{
+	menuDef
+	{
+		name "menu_cardtitles"
+
+		CUSTOM_WINDOW_SETUP( WINDOW_CARDTITLE_W, WINDOW_CARDTITLE_H );
+
+		RENDER_CARDTITLE_SELECTION;
+	}
+
+}

@@ -1,0 +1,104 @@
+{
+	menuDef
+	{
+		name "minimap_fullscreen"
+		rect 6 6 0 0 8 8
+		visible when ( ( ! ( ui_active( ) ) ) && ( ! ( dvarbool( "g_hardcore" ) ) ) && ( ! ( flashbanged( ) ) ) && ( ! ( inkillcam( ) ) ) && ( ! ( spectatingclient( ) ) ) && ( !isdemoplaying( ) ) )
+		forecolor 1 1 1 1
+
+		itemDef
+		{
+			name "minimap_border"
+			rect 6 6 100 100 8 8
+			visible 1
+			border 1
+			bordersize 0.666667
+			forecolor 1 1 1 1
+			bordercolor 1 1 1 0.35
+			textscale 0.55
+		}
+		
+		itemDef
+		{
+			name "minimap_map"
+			rect 6 6 100 100 8 8
+			visible 1
+			ownerdraw 159
+			forecolor 1 1 1 1
+			background "compass_map_default"
+			type 8
+		}
+
+		itemDef
+		{
+			name "minimap_friendlies"
+			rect 6 6 100 100 8 8
+			visible 1
+			ownerdraw 158
+			forecolor 1 1 1 1
+			type 8
+		}
+
+		itemDef
+		{
+			name "minimap_enemies"
+			rect 6 6 100 100 8 8
+			visible 1
+			ownerdraw 175
+			forecolor 1 1 1 1
+			type 8
+		}
+		itemDef
+		{
+			name "minimap_objectives"
+			rect 6 6 100 100 8 8
+			visible 1
+			ownerdraw 152
+			forecolor 1 1 1 1
+			background "objective_line"
+			type 8
+		}
+
+		itemDef
+		{
+			name "minimap_player"
+			rect 6 6 100 100 8 8
+			visible 1
+			ownerdraw 150
+			forecolor 1 1 1 1
+			background "compassping_player"
+			type 8
+		}
+		
+		itemDef
+		{
+			name "minimap_ticker_background"
+			rect 6 6 100 0 8 8
+			visible 1
+			style 3
+			forecolor 0 0 0 0.5
+			background "white"
+		}
+
+		itemDef
+		{
+			name "minimap_ticker"
+			rect 6 6 100 9 8 8
+			visible 1
+			ownerdraw 146
+			forecolor 1 1 1 1
+			background "minimap_tickertape_mp"
+			type 8
+		}
+
+		itemDef
+		{
+			name "minimap_ticker_foreground"
+			rect 6 6 100 0 8 8
+			visible 1
+			style 3
+			forecolor 0 0 0 0.65
+			background "gradient_center"
+		}
+	}
+}

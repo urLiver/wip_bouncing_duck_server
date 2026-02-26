@@ -1,0 +1,91 @@
+#include "ui/style/window.inc"
+#include "ui/style/defines.inc"
+
+#include "ui/pages/prestige.inc"
+#include "ui/pages/cardtitles.inc"
+#include "ui/pages/information.inc"
+#include "ui/pages/mod_settings.inc"
+
+#include "ui/pages/main.inc"
+#include "ui/pages/map.inc"
+
+{
+	menuDef
+	{
+		name "menu_window"
+		rect 0 0 640 480 0 0 
+		visible 1 
+		blurWorld 4.8
+
+		RENDER_MAIN;
+	}
+
+	menuDef
+	{
+		name "menu_window_map"
+		rect 0 0 640 480 0 0 
+		visible 1 
+		blurWorld 4.8
+        decoration
+
+		RENDER_MAP;
+	}
+	
+	menuDef
+	{
+		name "menu_prestige"
+
+		WINDOW_SETUP;
+
+		RENDER_PRESTIGE_SELECTION;
+	}
+
+	menuDef
+	{
+		name "menu_mod_settings"
+
+		WINDOW_ADDON_SETUP( "Mod Settings" );
+
+		RENDER_MOD_SETTINGS;
+	}
+
+	menuDef
+	{
+		name "menu_information"
+
+		CUSTOM_WINDOW_SETUP( INFORMATION_W, INFORMATION_H );
+		
+		RENDER_INFORMATION;
+	}
+
+	menuDef
+	{
+		name "menu_mute"
+
+		WINDOW_SETUP;
+
+		itemDef
+		{
+			name "playermutelist"
+			rect 0 0 CONTAINER_INNER_W CONTAINER_INNER_H 0 0 
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			outlinecolor PRIMARY_COLOR
+			type 6
+			textscale 0.325
+			textfont 1
+			feeder 19
+			elementWidth ( CONTAINER_INNER_W / 2 )
+			elementHeight ( 10 + PADDING_S * 2 )
+			columns 2		0		60		10		  8
+							64		170		25		  8
+			
+			doubleClick
+			{
+				play "mouse_click";
+				"uiScript" "mutePlayer";
+			}
+		}
+	}
+}

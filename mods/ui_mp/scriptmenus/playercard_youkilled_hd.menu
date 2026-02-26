@@ -1,0 +1,73 @@
+
+{
+	menuDef
+	{
+		name "playercard_youkilled_hd"
+		rect 0 0 640 300 4 4
+		visible 1
+		forecolor 1 1 1 1
+		exp rect y ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_youKilled" ) ) / 150 ) , 1 ) , 0 ) * ( 180 ) ) + ( min( max( ( milliseconds( ) - localvarint( "ui_show_youKilled" ) + 1550 ) / 150 , 0 ) , 1 ) * ( 180 ) ) )
+		
+		itemDef
+		{
+			rect 0 0 230 30 9 10
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "white"
+			exp rect x ( ( 0 - 115 ) )
+			exp rect y ( ( 0 - 70 ) )
+			visible when ( 1 && ( dvarstring( "playercard_icon" ) != "" ) )
+			exp material ( dvarstring( "playercard_icon" ) )
+		}
+
+		itemDef
+		{
+			rect 0 0 20 20 9 10
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "white"
+			exp rect x ( 0 - 115 )
+			exp rect y ( 0 - 95 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) && ( getplayercardinfo( 4 , 0 , 8 ) >= 0 ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , getplayercardinfo( 4 , 0 , 8 ) , ( getplayercardinfo( 5 , 0 , 8 ) + 1 ) ) )
+		}
+
+		itemDef
+		{
+			rect 0 0 0 20 9 10
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 8
+			textscale 0.375
+			exp rect x ( ( 0 - 120 ) + 25 )
+			exp rect y ( 0 - 65 - 30 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) && ( getplayercardinfo( 4 , 0 , 8 ) >= 0 ) )
+			exp text ( tablelookup( "mp/rankTable.csv" , 0 , getplayercardinfo( 4 , 0 , 8 ) , 14 ) )
+		}
+
+		itemDef
+		{
+			rect 0 0 240 20 9 10
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 5
+			textscale 0.375
+			exp rect x ( ( 0 - 120 ) )
+			exp rect y ( 0 - 65 - 30 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) )
+			exp text ( getplayercardinfo( 11 , 0 , 8 ) )
+		}
+	}
+}

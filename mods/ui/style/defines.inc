@@ -1,0 +1,72 @@
+#ifndef MENU_W
+
+    #define PRIMARY_COLOR 0.341 0.373 0.812 1
+
+    #define PADDING_S 3
+    #define PADDING_L 5
+    #define PADDING_XL 10
+
+    #define TABBAR_W 640
+    #define TABBAR_H 30 
+    #define TABBAR_X 0
+    #define TABBAR_Y 0
+    #define TABBAR_ICON_X 5
+    #define TABBAR_ICON_Y 5
+    #define TABBAR_ICON_SIZE 20
+    #define TABBAR_ICON_SPACE ( TABBAR_ICON_SIZE + PADDING_L )
+    #define TABBAR_CENTER_COUNT 4
+    #define TABBAR_CENTER_W ( 66 )
+    #define TABBAR_CENTER_H 20
+    #define TABBAR_CENTER_FONT 1
+    #define TABBAR_CENTER_SCALE 0.375
+    #define TABBAR_CENTER_X ( ( TABBAR_X + ( TABBAR_W / 2 ) ) - ( ( ( ( TABBAR_CENTER_W + PADDING_L ) * TABBAR_CENTER_COUNT ) - PADDING_L ) / 2 ) )
+    #define TABBAR_CENTER_Y 5
+    #define TABBAR_CENTER_SPACE ( TABBAR_CENTER_W + PADDING_L )
+
+    #define MENU_W 446
+    #define MENU_H 326
+    #define MENU_X ( ( 640 - MENU_W ) / 2 )
+    #define MENU_Y ( ( 480 - MENU_H ) / 2 )
+
+    #define CONTAINER_OUTTER_X ( MENU_X - PADDING_L )
+    #define CONTAINER_OUTTER_Y ( MENU_Y - PADDING_L )
+    #define CONTAINER_OUTTER_W ( MENU_W + ( PADDING_L * 2 ) )
+    #define CONTAINER_OUTTER_H ( MENU_H + ( PADDING_L * 2 ) )
+
+    #define CONTAINER_INNER_X ( MENU_X + PADDING_S )
+    #define CONTAINER_INNER_Y ( MENU_Y + PADDING_S )
+    #define CONTAINER_INNER_W ( MENU_W - ( PADDING_S * 2 ) )
+    #define CONTAINER_INNER_H ( MENU_H - ( PADDING_S * 2 ) )
+
+    #define PRESTIGE_W ( ( CONTAINER_INNER_W - ( PADDING_L * 7 ) ) / 8 )
+    #define PRESTIGE_H ( ( CONTAINER_INNER_H - ( PADDING_L * 5 ) ) / 6 )
+    #define PRESTIGE_SPACE_X ( PRESTIGE_W + PADDING_L )
+    #define PRESTIGE_SPACE_Y ( PRESTIGE_H + PADDING_L )
+    
+    #define CARDTITLE_TEXT_H ( 13 )
+    #define CARDTITLE_W ( ( CONTAINER_INNER_W - ( PADDING_L * 2 ) ) / 3 )
+    #define CARDTITLE_H ( ( CONTAINER_INNER_H - PADDING_L * 14 ) / 7 )
+    #define CARDTITLE_SPACE_X ( CARDTITLE_W + PADDING_L )
+    #define CARDTITLE_SPACE_Y ( CARDTITLE_H + PADDING_L )
+    #define CARDTITLE_SHADER_H ( CARDTITLE_H - CARDTITLE_TEXT_H - PADDING_S )
+
+    #define WINDOW_CARDTITLE_W ( CONTAINER_INNER_W )
+    #define WINDOW_CARDTITLE_H ( CONTAINER_INNER_H + CARDTITLE_SPACE_Y )
+
+    #define INFORMATION_W ( 580 )
+    #define INFORMATION_H ( 360 )
+    #define INFORMATION_HALF_W ( INFORMATION_W / 2 )
+    #define INFORMATION_HALF_H ( INFORMATION_H / 2 )
+    #define INFORMATION_TEXT_X ( INFORMATION_HALF_W + PADDING_L + PADDING_S )
+    #define INFORMATION_TEXT_Y ( INFORMATION_HALF_H + PADDING_L + PADDING_S )
+    #define INFORMATION_TEXT_W ( INFORMATION_HALF_W - PADDING_L - PADDING_S )
+    #define INFORMATION_TEXT_H ( INFORMATION_HALF_H - PADDING_L - PADDING_S )
+
+    #define INFO_TAB_COUNT ( 4 )
+    #define INFO_TAB_W ( ( CONTAINER_INNER_W - ( INFO_TAB_COUNT * 2 ) ) / INFO_TAB_COUNT )
+    #define INFO_TAB_H ( 20 )
+    #define INFO_TAB_SPACE_X ( INFO_TAB_W + 2 )
+
+    #define BALANCE_ICON_SIZE 20
+
+#endif
