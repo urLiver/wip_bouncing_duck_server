@@ -37,3 +37,8 @@ Enjoy :D
 
 # TODO:
 * Add more stuff and fix bugs
+* change chat to use proper onplayersay hook and make roles
+* Add Mod Settings: Disable Custom Hud
+* Add Custom Hud: Killstreak next to minimap with gradien_fadein handled via dvar and button instructions below the map
+* Change Dvar Values to Claudi0s Dvar Values
+* Update Text on Information Page to show proper Credits and Changelog

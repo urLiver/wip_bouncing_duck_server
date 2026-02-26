@@ -84,24 +84,3 @@ init()
         break;
     }
 }
-
-todo 
-
-change chat to proper chat
-add some more modd settings? like disable hud information?
-
-draw killstreak next to map with a gradient_fadein shader ( killstreak will be handle via setting dvar same way it works with killsdvar on kill set it and then alos reset too 0 on death )
-below map draw button information
-
-ssteal claudi0s values
-
-
-update texts on infromation page
-
-top left will be gamemode still and link to discord
-
-right idc
-
-bottom left credits add clipp yand claudi0 + do a -> with what they done
-
-bottom right change to version 1.0: initinal commit 
