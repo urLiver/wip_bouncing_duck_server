@@ -2,6 +2,7 @@ init()
 {
     replacefunc( maps\mp\perks\_perkfunctions::glowstickenemyuselistener, ::on_glowstickenemyuselistener );
     replacefunc( maps\mp\perks\_perkfunctions::glowstickdamagelistener, ::on_glowstickdamagelistener );
+	replacefunc( maps\mp\perks\_perkfunctions::glowsticksetupandwaitfordeath, ::on_glowsticksetupandwaitfordeath );
 
     foreach( entry in getentarray() )
     {
@@ -41,6 +42,28 @@ on_damage_chicken()
     }
 }
 
+on_glowsticksetupandwaitfordeath( var_0 )
+{
+    self setmodel( level.precachemodel[ "enemy" ] );
+
+    thread maps\mp\perks\_perkfunctions::glowstickdamagelistener( var_0 );
+    thread maps\mp\perks\_perkfunctions::glowstickenemyuselistener( var_0 );
+    thread maps\mp\perks\_perkfunctions::glowstickuselistener( var_0 );
+    thread maps\mp\perks\_perkfunctions::glowstickteamupdater( level.otherteam[ self.team ], level.spawnglow[ "enemy" ], var_0 );
+   
+    var_1 = spawn( "script_model", self.origin + ( 0.0, 0.0, 0.0 ) );
+    var_1.angles = self.angles;
+    var_1 setmodel( level.precachemodel[ "friendly" ] );
+    var_1 setcontents( 0 );
+    var_1 thread maps\mp\perks\_perkfunctions::glowstickteamupdater( self.team, level.spawnglow[ "friendly" ], var_0 );
+    var_1 playloopsound( "emt_road_flare_burn" );
+    
+	self waittill( "death" );
+    
+	var_1 stoploopsound();
+    var_1 delete();
+}
+
 on_glowstickenemyuselistener( var_0 )
 {
     self endon( "death" );
@@ -50,7 +73,7 @@ on_glowstickenemyuselistener( var_0 )
     self.enemytrigger sethintstring( &"MP_PATCH_DESTROY_TI" );
     self.enemytrigger maps\mp\_utility::makeenemyusable( var_0 );
 
-    for (;;)
+    for ( ;; )
     {
         self.enemytrigger waittill( "trigger", var_1 );
 

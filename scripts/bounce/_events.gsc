@@ -4,6 +4,8 @@ init()
     replacefunc( maps\mp\_events::firstblood, ::on_firstblood );
 }
 
+// gonna use at one point for killsounds
+
 on_multikill( var_0, var_1 )
 {
     if ( var_1 == 2 )

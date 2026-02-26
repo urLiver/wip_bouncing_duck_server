@@ -175,7 +175,7 @@ on_killcam( var_0, var_1, var_2, var_3, var_4, var_5, var_6, var_7, var_8, var_9
         self.kc_timer settenthstimer( var_10 );
     }
 
-    if ( var_6 && !level.gameended )
+    if ( var_6 && ! level.gameended )
     {
         maps\mp\_utility::setlowermessage( "kc_info", &"PLATFORM_PRESS_TO_SKIP", undefined, undefined, undefined, undefined, undefined, undefined, 1 );
     }

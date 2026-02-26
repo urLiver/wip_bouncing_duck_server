@@ -227,7 +227,7 @@ on_onmenuresponse()
                     case 3:
                     case 4:
                         kills_needed = [ 1000, 2500, 5000, 10000 ]; 
-                        if ( kills_needed[ ( num - 1 )] <= level.player_stats[ guid ][ "total_kills" ] )
+                        if ( kills_needed[ ( num - 1 ) ] <= level.player_stats[ guid ][ "total_kills" ] )
                         {
                             can_update_cardtitle = true;
                         }
@@ -238,7 +238,7 @@ on_onmenuresponse()
                     case 7:
                     case 8:
                         deaths_needed = [ 1000, 2500, 5000, 10000 ]; 
-                        if ( deaths_needed[ ( num - 5 )] <= level.player_stats[ guid ][ "total_deaths" ] )
+                        if ( deaths_needed[ ( num - 5 ) ] <= level.player_stats[ guid ][ "total_deaths" ] )
                         {
                             can_update_cardtitle = true;
                         }
@@ -250,7 +250,7 @@ on_onmenuresponse()
                     case 12:
                     case 13:
                         nukes_called_needed = [ 1, 10, 50, 100, 200 ]; 
-                        if ( nukes_called_needed[ ( num - 9 )] <= level.player_stats[ guid ][ "moabs_called" ] )
+                        if ( nukes_called_needed[ ( num - 9 ) ] <= level.player_stats[ guid ][ "moabs_called" ] )
                         {
                             can_update_cardtitle = true;
                         }
@@ -259,7 +259,7 @@ on_onmenuresponse()
                     case 14:
                     case 15:
                         nukes_cancelled_needed = [ 10, 50 ]; 
-                        if ( nukes_cancelled_needed[ ( num - 14 )] <= level.player_stats[ guid ][ "moabs_cancelled" ] )
+                        if ( nukes_cancelled_needed[ ( num - 14 ) ] <= level.player_stats[ guid ][ "moabs_cancelled" ] )
                         {
                             can_update_cardtitle = true;
                         }
@@ -270,7 +270,7 @@ on_onmenuresponse()
                     case 18:
                     case 19:
                         prestige_needed = [ 10, 20, 30, 40 ]; 
-                        if ( prestige_needed[ ( num - 16 )] <= level.player_stats[ guid ][ "prestige" ] )
+                        if ( prestige_needed[ ( num - 16 ) ] <= level.player_stats[ guid ][ "prestige" ] )
                         {
                             can_update_cardtitle = true;
                         }
@@ -279,7 +279,7 @@ on_onmenuresponse()
                     case 20:
                     case 21:
                         tis_destroyed_needed = [ 50, 100 ]; 
-                        if ( tis_destroyed_needed[ ( num - 20 )] <= level.player_stats[ guid ][ "tis_destroyed" ] )
+                        if ( tis_destroyed_needed[ ( num - 20 ) ] <= level.player_stats[ guid ][ "tis_destroyed" ] )
                         {
                             can_update_cardtitle = true;
                         }
@@ -309,7 +309,7 @@ on_onmenuresponse()
                     case 25:
                     case 26:
                         infected_kills_needed = [ 500, 1000 ]; 
-                        if ( infected_kills_needed[ ( num - 25 )] <= level.player_stats[ guid ][ "infected_kills" ] )
+                        if ( infected_kills_needed[ ( num - 25 ) ] <= level.player_stats[ guid ][ "infected_kills" ] )
                         {
                             can_update_cardtitle = true;
                         }
@@ -347,6 +347,5 @@ on_connect()
         level waittill( "connected", player );
 	    
         player setClientDvars( "g_scriptMainMenu", "menu_window" );
-        
     }
 }

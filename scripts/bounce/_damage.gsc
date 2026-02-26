@@ -363,7 +363,6 @@ on_handlenormaldeath( var_0, var_1, var_2, var_3, var_4 )
         }
     }
 
-    
     if ( isdefined( self.attackers ) )
     {
         foreach ( var_12 in self.attackers )
@@ -400,7 +399,7 @@ on_handlenormaldeath( var_0, var_1, var_2, var_3, var_4 )
                         level.succes_full_nukes++;
                     }
 
-                    if( var_12.pers["cur_kill_streak_for_nuke"] == 30 && var_12.used_moab == 0)
+                    if( var_12.pers[ "cur_kill_streak_for_nuke" ] == 30 && var_12.used_moab == 0 )
                     {
                         var_12 thread punish_respawn();
                     }
