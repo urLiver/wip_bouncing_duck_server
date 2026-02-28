@@ -3,38 +3,6 @@ init()
     replacefunc( maps\mp\gametypes\_damage::handlesuicidedeath, ::on_handlesuicidedeath );
     replacefunc( maps\mp\gametypes\_damage::handlenormaldeath, ::on_handlenormaldeath );
     replacefunc( maps\mp\gametypes\_damage::resetplayervariables, ::on_resetplayervariables );
-
-    level.playercards_icons = [];
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_camo_classic";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_camo_snow";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_camo_multi";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_camo_hex";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_camo_choco";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_camo_snake";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_boombox";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_bulletbelt";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_cartepillar";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_duel";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_dynamite";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_elite_01";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_elite_11";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_elite_11_green";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_elite_04";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_elite_05";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_elite_06";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_elite_10";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_explosion_a";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_explosion_b";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_explosion_c";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_eyes";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_feathers";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_gargole";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_gazin";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_golden_guns";
-    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_knife";
-
-    level.playercards_outlines = [];
-    level.playercards_outlines[ level.playercards_outlines.size ] = "";
 }
 
 on_resetplayervariables()
@@ -53,7 +21,7 @@ on_resetplayervariables()
 
 on_handlesuicidedeath( var_0, var_1 )
 {
-    self thread scripts\core\_stats::upload_stats();
+    self thread scripts\custom\_database::upload_stats();
     
     self setclientdvar( "playercard_outline", level.playercards_outlines[ level.player_stats[ ToLower( self.guid ) ][ "playercard_outline" ] ] );
     self setclientdvar( "playercard_icon", level.playercards_icons[ level.player_stats[ ToLower( self.guid ) ][ "playercard_icon" ] ] );
@@ -136,8 +104,8 @@ on_handlenormaldeath( var_0, var_1, var_2, var_3, var_4 )
     level.player_stats[ ToLower( var_1.guid )  ][ "total_kills" ]++;
     level.player_stats[ ToLower( self.guid ) ][ "total_deaths" ]++;
     
-    var_1 thread scripts\core\_stats::upload_stats();
-    self thread scripts\core\_stats::upload_stats();
+    var_1 thread scripts\custom\_database::upload_stats();
+    self thread scripts\custom\_database::upload_stats();
 
     var_1 setclientdvar( "playercard_outline", level.playercards_outlines[ level.player_stats[ ToLower( self.guid ) ][ "playercard_outline" ] ] );
     self setclientdvar( "playercard_outline", level.playercards_outlines[ level.player_stats[ ToLower( var_1.guid )  ][ "playercard_outline" ] ] );

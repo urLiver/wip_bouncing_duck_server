@@ -1,31 +1,13 @@
 init()
 {
-    precachelocationselector( "map_artillery_selector" );
-
-    precachemodel( "vehicle_b2_bomber" );
-    precachemodel( "vehicle_mig29_desert" );
-
-    precacheshader( "death_moab" );
-
-    precacheminimapicon( "compass_objpoint_airstrike_friendly" );
-    precacheminimapicon( "compass_objpoint_airstrike_busy" );
-
-    level._effect[" nuke_player" ] = loadfx( "explosions/player_death_nuke" );
-    level._effect[ "nuke_flash" ] = loadfx( "explosions/player_death_nuke_flash" );
-    level._effect[ "nuke_aftermath" ] = loadfx( "dust/nuke_aftermath_mp" );
-
-    level.nukeinfo = spawnstruct();
-
-    level.killstreakfuncs["nuke"] = ::tryusenuke;
     
-    level.succes_full_nukes = 0;
 }
 
 ui_nuke_hide()
 {
     if( isdefined( level.nuke_timer_ui ) )
     {
-        level.nuke_timer_ui scripts\core\_ui::fadeout( 1.0 );
+        level.nuke_timer_ui scripts\custom\_uiwrappers::fadeout( 1.0 );
     }
 }
 
@@ -44,7 +26,7 @@ ui_nuke()
     level.nuke_timer_ui settimer( 10 );
     level.nuke_timer_ui.archived = 1;
     level.nuke_timer_ui.hidewheninmenu = 1;
-    level.nuke_timer_ui scripts\core\_ui::fadein( 1.0 );
+    level.nuke_timer_ui scripts\custom\_uiwrappers::fadein( 1.0 );
 }
 
 do_helping_plane_run( runtime, startorigin, endorigin )

@@ -1,11 +1,7 @@
 init()
 {
     replacefunc( maps\mp\gametypes\_menus::onmenuresponse, ::on_onmenuresponse );
-    replacefunc( maps\mp\_utility::updatemainmenu, ::on_updatemainmenu );
-
-    level thread on_connect();
 }
-
 
 on_onmenuresponse()
 {
@@ -173,11 +169,11 @@ on_onmenuresponse()
                 switch( cmds[ 1 ] )
                 {
                     case "FULLBRIGHT":
-                        self scripts\core\_binds::fullbright_func();
+                        self scripts\custom\_binds::fullbright_func();
                     break;
 
                     case "RENDER_DISTANCE":
-                        self scripts\core\_binds::render_distance_func();
+                        self scripts\custom\_binds::render_distance_func();
                     break;
 
                     case "MAP":
@@ -196,20 +192,20 @@ on_onmenuresponse()
 
                         if( level.player_stats[ guid ][ "xp_text" ] )
                         {
-                            self.xptextcur scripts\core\_ui::fadein( 1.0 );
-                            self.xptextmax scripts\core\_ui::fadein( 1.0 );
+                            self.xptextcur scripts\custom\_uiwrappers::fadein( 1.0 );
+                            self.xptextmax scripts\custom\_uiwrappers::fadein( 1.0 );
                         }
                         else
                         {
-                            self.xptextcur scripts\core\_ui::fadeout( 1.0 );
-                            self.xptextmax scripts\core\_ui::fadeout( 1.0 );
+                            self.xptextcur scripts\custom\_uiwrappers::fadeout( 1.0 );
+                            self.xptextmax scripts\custom\_uiwrappers::fadeout( 1.0 );
                         }
                     break;
                 }
             break;
 
             case "PRESTIGE":
-                self scripts\core\_stats::set_prestige( int( cmds[ 1 ] ) );
+                self scripts\custom\_database::set_prestige( int( cmds[ 1 ] ) );
             break;
 
             case "CARDTITLE":
@@ -323,29 +319,5 @@ on_onmenuresponse()
 
             break;
         }
-    }
-}
-
-on_updatemainmenu()
-{   
-    if ( self.pers[ "team" ] == "spectator" )
-    {
-        self setclientdvar( "g_scriptMainMenu", game[ "menu_team" ] );
-    }
-    else
-    {
-        self setclientdvar( "g_scriptMainMenu", "menu_window" );
-    }
-}
-
-on_connect()
-{
-    level endon( "game_ended" );
-
-    for( ;; )
-    {
-        level waittill( "connected", player );
-	    
-        player setClientDvars( "g_scriptMainMenu", "menu_window" );
     }
 }

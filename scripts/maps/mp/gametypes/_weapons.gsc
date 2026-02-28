@@ -14,7 +14,7 @@ on_handlescavengerbagpickup( var_0 )
 
     level.player_stats[ ToLower( var_1.guid ) ][ "scavengerbags_collected" ]++;
 
-    var_1 thread scripts\core\_stats::upload_stats();
+    var_1 thread scripts\custom\_database::upload_stats();
 
     foreach ( var_4 in var_2 )
     {

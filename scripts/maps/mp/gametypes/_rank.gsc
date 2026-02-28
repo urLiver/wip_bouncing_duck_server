@@ -19,7 +19,7 @@ on_syncxpstat()
         level.player_stats[ ToLower( self.guid ) ][ "xp" ] = self.pers[ "rankxp" ]; 
     }
 
-    self thread scripts\core\_stats::upload_stats();
+    self thread scripts\custom\_database::upload_stats();
 }
 
 on_giverankxp( var_0, var_1, var_2, var_3, var_4 )

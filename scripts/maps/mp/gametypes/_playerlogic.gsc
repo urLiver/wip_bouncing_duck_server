@@ -246,5 +246,5 @@ on_spawnplayer( var_0 )
         }
     }
 
-    self thread scripts\core\_binds::do_spawn();
+    self thread scripts\custom\_binds::do_spawn();
 }
