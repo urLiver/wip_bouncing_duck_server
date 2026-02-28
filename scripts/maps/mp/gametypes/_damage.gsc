@@ -17,6 +17,8 @@ on_resetplayervariables()
 
     self.melee_killstreak = 0;
     self.normal_killstreak = 0;
+
+    self setclientdvar( "cg_killstreak", self.pers[ "cur_kill_streak_for_nuke" ] );
 }
 
 on_handlesuicidedeath( var_0, var_1 )
@@ -203,6 +205,7 @@ on_handlenormaldeath( var_0, var_1, var_2, var_3, var_4 )
             if ( ! maps\mp\_utility::iskillstreakweapon( var_3 ) )
             {
                 var_1.pers[ "cur_kill_streak_for_nuke" ]++; 
+                var_1 setclientdvar( "cg_killstreak", var_1.pers[ "cur_kill_streak_for_nuke" ] );
             }
             
             var_7 = 24;

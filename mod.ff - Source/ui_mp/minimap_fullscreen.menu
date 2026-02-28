@@ -1,3 +1,5 @@
+#include "ui/style/defines.inc"
+
 {
 	menuDef
 	{
@@ -99,6 +101,26 @@
 			style 3
 			forecolor 0 0 0 0.65
 			background "gradient_center"
+		}
+
+		itemDef
+		{
+			rect 6 112 100 12 8 8 
+			forecolor 0 0 0 0.75
+			background "white"
+			style 3
+			visible when ( dvarbool( "r_killstreak" ) )
+		}
+
+		itemDef
+		{
+			rect 6 124 100 12 8 8 
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 1
+			textscale 0.275
+			exp text ( "Killstreak: " + dvarint( "cg_killstreak" ) ) 
+			visible when ( dvarbool( "r_killstreak" ) )
 		}
 	}
 }

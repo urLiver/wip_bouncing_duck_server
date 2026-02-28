@@ -176,6 +176,12 @@ on_onmenuresponse()
                         self scripts\custom\_binds::render_distance_func();
                     break;
 
+                    case "RENDERKILLSTREAK":
+                        level.player_stats[ guid ][ "render_killstreak" ] = ! level.player_stats[ guid ][ "render_killstreak" ];
+                        self setClientDvar( "r_killstreak", level.player_stats[ guid ][ "render_killstreak" ] );
+                    break;
+                    
+                    // Old settings currently not used might change in the future
                     case "MAP":
                         level.player_stats[ guid ][ "simple_map" ] = ! level.player_stats[ guid ][ "simple_map" ];
                         self setClientDvar( "r_simple_map", level.player_stats[ guid ][ "simple_map" ] );
