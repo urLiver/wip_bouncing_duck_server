@@ -43,4 +43,3 @@ Enjoy :D
 * Update mod.ff to include more features
 * add map vote hud like csgo servers do or refactor the thing bound to b to do that
 * add last one alive having the kill icon above
-* add campaign intel to some maps that reward cool cardtitles like terminal then something with planes
