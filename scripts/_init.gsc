@@ -27,7 +27,6 @@ init()
 
     thread scripts\custom\killstreaks\_nuke::init(); 
 
-    thread scripts\custom\_binds::init();
     thread scripts\custom\_chat::init();
     thread scripts\custom\_database::init();
     thread scripts\custom\_player::init();

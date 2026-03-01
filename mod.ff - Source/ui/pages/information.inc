@@ -59,5 +59,5 @@
 		INFORMATION_TITLE( 1, 1, "Changelog" ); \
         INFORMATION_TEXT( 0, 0, "A Modded Version of the loved Gamemode Infected, where Bounces \nare Possibile and the only defense against the Infected is \na good old Shotgun :D" ); \
         INFORMATION_TEXT( 0, 1, "ZECxR3ap3r \nWiizard \nJoelrau \nSloth \nLastDemon99 \nM0vx \nUwUneedsBunni \nClaudi0 \nurLiver" ); \
-        INFORMATION_TEXT( 1, 0, "Chat Commands \nPromote with: ?p / ?prestige \nSelecte a Prestige with: ?sp / ?setprestige \n\nBinds \n[{+actionslot 6}] = Suicide \n[{vote no}] = Toggle Fullbright \n[{vote yes}] = Toggle Render Distance \n" ); \
+        INFORMATION_TEXT( 1, 0, "Chat Commands \nPromote with: ?prestige \nSelecte a Prestige with: ?set_prestige \n\nBinds \n[{+actionslot 6}] = Suicide \n[{vote no}] = Toggle Fullbright \n[{vote yes}] = Toggle Render Distance \n" ); \
         INFORMATION_TEXT( 1, 1, "V1.0 Initiale Release" );

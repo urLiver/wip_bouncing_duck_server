@@ -70,12 +70,10 @@ chatlistener()
         switch( cmd )
         {
             case "prestige":
-            case "p":
                 player thread scripts\custom\_database::promote_prestige();
             break;
 
             case "set_prestige":
-            case "sp":
                 if( isdefined( cmds[ 1 ] ) )
                 {
                     switch( cmds[ 1 ] )
@@ -104,7 +102,6 @@ chatlistener()
             break;
             
             case "stats":
-            case "s":
                 target = player;
 
                 if( isdefined( cmds[ 1 ] ) )

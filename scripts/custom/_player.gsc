@@ -121,10 +121,10 @@ do_any_spawn()
     self endon( "disconnect" );
 
     guid = ToLower( self.guid );
-
-    if( level.player_stats[ guid ][ "scoreboard_icon" ] != 0 )
+    
+    if( isdefined( level.player_stats[ guid ][ "scoreboard_icon" ] ) && level.player_stats[ guid ][ "scoreboard_icon" ] != 0 && isdefined( level.playerstatus_icons[ int( level.player_stats[ guid ][ "scoreboard_icon" ] ) - 1 ] ) )
     {
-        // Readd the special icon on some 
+        self maps\mp\gametypes\_playerlogic::updatesessionstate( "playing", level.playerstatus_icons[ int( level.player_stats[ guid ][ "scoreboard_icon" ] ) - 1 ] );
     }
 }
 

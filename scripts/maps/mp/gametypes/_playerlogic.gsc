@@ -63,7 +63,7 @@ on_spawnplayer( var_0 )
     var_7 = self.hasspawned;
     self.fauxdead = undefined;
 
-    if ( !var_0 )
+    if ( ! var_0 )
     {
         self.killsthislife = [];
         self maps\mp\gametypes\_playerlogic::updatesessionstate( "playing", "" );

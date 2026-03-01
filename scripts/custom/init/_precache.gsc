@@ -14,6 +14,12 @@ init()
     precacheshader( "iw5_cardicon_devil" );
     precacheshader( "cardicon_gears" );
 
+    precachestatusicon( "iw5_cardicon_frank" );
+    precachestatusicon( "iw5_cardicon_cat" );
+    precachestatusicon( "cardicon_weed" );
+    precachestatusicon( "iw5_cardicon_devil" );
+    precachestatusicon( "cardicon_gears" );
+
     precachemenu( "menu_window" );
 
     precacheminimapicon( "compass_objpoint_airstrike_friendly" );

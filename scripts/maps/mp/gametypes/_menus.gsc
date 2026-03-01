@@ -169,11 +169,11 @@ on_onmenuresponse()
                 switch( cmds[ 1 ] )
                 {
                     case "FULLBRIGHT":
-                        self scripts\custom\_binds::fullbright_func();
+                        self scripts\custom\_player::fullbright_func();
                     break;
 
                     case "RENDER_DISTANCE":
-                        self scripts\custom\_binds::render_distance_func();
+                        self scripts\custom\_player::render_distance_func();
                     break;
 
                     case "RENDERKILLSTREAK":

@@ -21,10 +21,7 @@ init()
         "scavengerbags_collected",
         "render_distance",
         "fullbright",
-        "simple_map",
         "xp_text",
-        "compass",
-        "velocity_meter",
         "render_killstreak"
     ];
 }
@@ -149,10 +146,7 @@ update_dvars()
     self setClientDvar( "r_lightmap", fullbright[ level.player_stats[ ToLower( guid ) ][ "fullbright" ] ] );
     self setClientDvar( "r_lightmap_text", fullbright_text[ level.player_stats[ ToLower( guid ) ][ "fullbright" ] ] );
     self setClientDvar( "r_lightmap_text", fullbright_text[ level.player_stats[ ToLower( guid ) ][ "fullbright" ] ] );
-    self setClientDvar( "r_simple_map", level.player_stats[ guid ][ "simple_map" ] );
     self setClientDvar( "r_xp", level.player_stats[ guid ][ "xp_text" ] );
-    self setClientDvar( "r_compass", level.player_stats[ guid ][ "compass" ] );
-    self setClientDvar( "r_velocity_meter", level.player_stats[ guid ][ "velocity_meter" ] );
     self setClientDvar( "r_killstreak", level.player_stats[ guid ][ "render_killstreak" ] );
 
     if( level.player_stats[ guid ][ "xp_text" ] && self.xptextcur.alpha == 0.0 && self.xptextmax.alpha == 0.0 )
