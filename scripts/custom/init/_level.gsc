@@ -179,7 +179,6 @@ create_map_list()
     add_map( "mp_bootleg", "", 0 );
     add_map( "mp_carbon", "", 0 );
     add_map( "mp_dome", "betty", 0 );
-    //add_map( "mp_radar", "", 0 ); crashes cuz of materials
     add_map( "mp_exchange", "betty", 0 );
     add_map( "mp_lambeth", "", 0 );
     add_map( "mp_hardhat", "", 0 );
@@ -196,8 +195,6 @@ create_map_list()
     add_map( "mp_nuked", "", 0 );
     add_map( "mp_village", "", 0 );
     add_map( "mp_favela", "", 0 );
-
-    //Non-Stock but Pluto Stock
     add_map( "mp_test", "", 0 );
     add_map( "mp_highrise", "tk", 1 );
     add_map( "mp_nightshift", "betty", 1 );
@@ -225,7 +222,6 @@ create_map_list()
     add_map( "mp_fav_tropical", "tk", 1 );
     add_map( "mp_checkpoint", "tk", 1 );
     add_map( "mp_quarry", "tk", 1 );
-    // add_map( "mp_compact", "betty", 1 ); same as mp radar
     add_map( "mp_boneyard", "betty", 0 );
     add_map( "mp_storm", "betty", 0 );
     add_map( "mp_subbase", "betty", 0 );
@@ -259,13 +255,11 @@ create_map_list()
     add_map( "mp_roughneck", "", 0 );
     add_map( "mp_shipbreaker", "", 0 );
     add_map( "mp_kwakelo", "", 0 );
-    //add_map( "mp_fuel2", "betty", 1 );
     add_map( "mp_csgo_mirage", "", 0 );
     add_map( "mp_cha_quad", "", 0 );
     add_map( "mp_overwatch", "betty", 0 );
     add_map( "so_deltacamp", "", 0 );
     add_map( "mp_broadcast", "tk", 1 );
-    //add_map( "mp_bootleg_sh", "", 0 ); Files missing
 }
 
 add_launcher( internal_name )

@@ -3,6 +3,7 @@ init()
     // Initizalizing any Game Function which we Replace
 
     thread scripts\maps\mp\gametypes\_damage::init();
+    thread scripts\maps\mp\gametypes\_deathicons::init();
     thread scripts\maps\mp\gametypes\_gamelogic::init();
     thread scripts\maps\mp\gametypes\_killcam::init();
     thread scripts\maps\mp\gametypes\_menus::init();
