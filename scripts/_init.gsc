@@ -28,6 +28,9 @@ init()
 
     thread scripts\custom\killstreaks\_nuke::init(); 
 
+    thread scripts\custom\maps\_maps::init();
+    thread scripts\custom\maps\_objects::init();
+
     thread scripts\custom\_chat::init();
     thread scripts\custom\_database::init();
     thread scripts\custom\_player::init();

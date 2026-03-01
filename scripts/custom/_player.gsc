@@ -59,18 +59,15 @@ do_infected_spawn()
 
     self TakeAllWeapons();
 
-    if( isdefined( level.half_time ) ) 
+    if( isdefined( level.allow_tks ) && self.stats[ "stats_deathstreak" ].value >= 4 ) 
     {
-        if( level.deathstreak == "betty" )
-        {
-            self GiveWeapon("bouncingbetty_mp");
-        }
-        else if( level.deathstreak == "tk" && self.stats[ "stats_deathstreak" ].value >= 4 )
-        {
-            self GiveWeapon( "throwingknife" );
-            self SetOffhandPrimaryClass( "throwingknife" );
-            self SetWeaponAmmoClip( "throwingknife_mp", 1 );
-        }
+        self GiveWeapon( "throwingknife" );
+        self SetOffhandPrimaryClass( "throwingknife" );
+        self SetWeaponAmmoClip( "throwingknife_mp", 1 );
+    }
+    else
+    {
+        self GiveWeapon( "bouncingbetty_mp" );
     }
 
     self maps\mp\_utility::GivePerk( "specialty_tacticalinsertion", 1 );

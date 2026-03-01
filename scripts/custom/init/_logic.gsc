@@ -7,9 +7,14 @@ half_timer()
 {
     level endon( "game_ended" );
 
-    level.half_time = undefined;
+    level.allow_tks = undefined;
 
-    wait ( 5 * 60 );
+    wait( 5 * 60 );
 
-    level.half_time = 1;
+    if( level.cur_map.hard == 0 )
+    {
+        wait( 3 * 60 );
+    }
+
+    level.allow_tks = 1;
 }

@@ -41,3 +41,5 @@ Enjoy :D
 ## Future Plans of the the Project:
 * Replace the _chat.gsc file with the one from ug_jugg and update it so it loads the roles from a custom file
 * Update mod.ff to include more features
+* add map vote hud like csgo servers do or refactor the thing bound to b to do that
+* add last one alive having the kill icon above

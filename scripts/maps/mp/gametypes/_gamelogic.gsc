@@ -21,7 +21,7 @@ end_level()
 
         target_map = level.map_list[ rand ];
 
-        if ( level.cur_map.hard != target_map.hard && level.cur_map.deathstreak != target_map.deathstreak )
+        if ( level.cur_map.hard != target_map.hard )
         {
             level.found_map = true;
             level.next_map = target_map.name;

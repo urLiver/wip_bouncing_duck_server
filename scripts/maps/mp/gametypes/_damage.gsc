@@ -3,6 +3,34 @@ init()
     replacefunc( maps\mp\gametypes\_damage::handlesuicidedeath, ::on_handlesuicidedeath );
     replacefunc( maps\mp\gametypes\_damage::handlenormaldeath, ::on_handlenormaldeath );
     replacefunc( maps\mp\gametypes\_damage::resetplayervariables, ::on_resetplayervariables );
+    replacefunc( maps\mp\gametypes\_damage::callback_playerdamage, ::on_callback_playerdamage );
+}
+
+on_callback_playerdamage( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc, timeOffset )
+{
+    if( isdefined( eAttacker ) && isdefined( eAttacker.hud_damagefeedback ) && eAttacker.hud_damagefeedback.color == (1, 0, 0))
+    {
+        eAttacker.hud_damagefeedback setshader( "damage_feedback", 24, 48 );
+        eAttacker.hud_damagefeedback.color = ( 1, 1, 1 );
+    }
+
+    if( isdefined( self ) && isdefined( eAttacker ) && isdefined( self.flag_protected ) )
+    {   
+        if( isdefined( eAttacker.hud_damagefeedback ) )
+        { 
+            eAttacker playlocalsound( "MP_hit_alert" );
+
+            eAttacker.hud_damagefeedback setshader( "iw5_cardicon_devil", 24, 24 );
+            eAttacker.hud_damagefeedback.color = ( 0.933, 0.510, 0.933 );
+            eAttacker.hud_damagefeedback.alpha = 0.5;
+            eAttacker.hud_damagefeedback fadeOverTime( 0.25 );
+            eAttacker.hud_damagefeedback.alpha = 0;
+        }
+
+        return;
+    }
+
+    maps\mp\gametypes\_damage::callback_playerdamage_internal( eInflictor, eAttacker, self, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc, timeOffset );
 }
 
 on_resetplayervariables()
