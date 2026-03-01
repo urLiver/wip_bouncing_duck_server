@@ -159,7 +159,7 @@ render_distance_func()
     self setClientDvar ( "r_zfar", render_distance[ level.player_stats[ ToLower( self.guid ) ][ "render_distance" ] ] );
     self setClientDvar ( "r_zfar_text", render_distance_text[ level.player_stats[ ToLower( self.guid ) ][ "render_distance" ] ] );
 
-    self IPrintLn( "^3" + render_distance_text[ level.player_stats[ ToLower( self.guid ) ][ "render_distance" ] ] );
+    self IPrintLn( "^6" + render_distance_text[ level.player_stats[ ToLower( self.guid ) ][ "render_distance" ] ] );
 }
 
 watch_renderdistance()
@@ -191,7 +191,7 @@ fullbright_func()
     self setClientDvar ( "r_lightmap", fullbright[ level.player_stats[ ToLower( self.guid ) ][ "fullbright" ] ] );
     self setClientDvar ( "r_lightmap_text", fullbright_text[ level.player_stats[ ToLower( self.guid ) ][ "fullbright" ] ] );
     
-    self IPrintLn( "^3" + fullbright_text[ level.player_stats[ ToLower( self.guid ) ][ "fullbright" ] ] );
+    self IPrintLn( "^6" + fullbright_text[ level.player_stats[ ToLower( self.guid ) ][ "fullbright" ] ] );
 }
 
 watch_fullbright()

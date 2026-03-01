@@ -91,7 +91,7 @@ chatlistener()
                         break;
 
                         case "Clippy":
-                            player thread scripts\custom\_database::set_prestige( 45, "Prestige set to: ^3Clippy", "^3The one and only" );
+                            player thread scripts\custom\_database::set_prestige( 45, "Prestige set to: ^6Clippy", "^6The one and only" );
                         break;
 
                         default:
@@ -118,15 +118,15 @@ chatlistener()
 
                 if( prefix_cur == "@" )
                 { 
-                    say( "Stats for: ^3" + target.name );
-                    say( "Kills: ^3" + level.player_stats[ guid ][ "total_kills" ] + " ^7Deaths: ^3" + level.player_stats[ guid ][ "total_deaths" ] );
-                    say( "K/D: ^3" + float( level.player_stats[ guid ][ "total_kills" ] / level.player_stats[ guid ][ "total_deaths" ] ) );
+                    say( "Stats for: ^6" + target.name );
+                    say( "Kills: ^6" + level.player_stats[ guid ][ "total_kills" ] + " ^7Deaths: ^6" + level.player_stats[ guid ][ "total_deaths" ] );
+                    say( "K/D: ^6" + float( level.player_stats[ guid ][ "total_kills" ] / level.player_stats[ guid ][ "total_deaths" ] ) );
                 }
                 else
                 {
-                    player tell( "Stats for: ^3" + target.name );
-                    player tell( "Kills: ^3" + level.player_stats[ guid ][ "total_kills" ] + " ^7Deaths: ^3" + level.player_stats[ guid ][ "total_deaths" ] );
-                    player tell( "K/D: ^3" + float( level.player_stats[ guid ][ "total_kills" ] / level.player_stats[ guid ][ "total_deaths" ] ) );
+                    player tell( "Stats for: ^6" + target.name );
+                    player tell( "Kills: ^6" + level.player_stats[ guid ][ "total_kills" ] + " ^7Deaths: ^6" + level.player_stats[ guid ][ "total_deaths" ] );
+                    player tell( "K/D: ^6" + float( level.player_stats[ guid ][ "total_kills" ] / level.player_stats[ guid ][ "total_deaths" ] ) );
                 }
             break;
         }

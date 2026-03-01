@@ -9,7 +9,7 @@ on_updaterankannouncehud()
 {
     self endon( "disconnect" );
 
-    self IPrintLnBold( "New Level: ^3" + ( self.pers[ "rank" ] + 1 ) );
+    self IPrintLnBold( "New Level: ^6" + ( self.pers[ "rank" ] + 1 ) );
 }
 
 on_syncxpstat()

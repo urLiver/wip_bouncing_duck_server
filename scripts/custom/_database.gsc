@@ -249,7 +249,7 @@ promote_prestige()
     level.player_stats[ guid ][ "prestige" ] = level.player_stats[ guid ][ "prestige" ] + 1;
     level.player_stats[ guid ][ "prestige_replace" ] = 9999;
 
-    self tell( "Reached Prestige: ^3" + level.player_stats[ guid ][ "prestige" ] + " ^7/ ^3" + level.maxprestige );
+    self tell( "Reached Prestige: ^6" + level.player_stats[ guid ][ "prestige" ] + " ^7/ ^6" + level.maxprestige );
 
     self.pers[ "prestige" ] = level.player_stats[ guid ][ "prestige" ];
     self.pers[ "rankxp" ] = level.player_stats[ guid ][ "xp" ];
@@ -291,7 +291,7 @@ set_prestige( prestige, msg, hint )
 
     if( ! isdefined( hint ) || ! isdefined( msg ) )
     {
-        self tell( "Prestige set to: ^3" + prestige + " ^7/ ^3" + level.player_stats[ guid ][ "prestige" ] );
+        self tell( "Prestige set to: ^6" + prestige + " ^7/ ^6" + level.player_stats[ guid ][ "prestige" ] );
     }
 
     level.player_stats[ guid ][ "prestige_replace" ] = prestige;

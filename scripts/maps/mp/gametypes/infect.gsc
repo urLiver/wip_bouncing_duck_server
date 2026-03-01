@@ -18,7 +18,7 @@ on_choosefirstinfected()
 
     level.infect_timerdisplay = maps\mp\gametypes\_hud_util::createservertimer( "bigfixed", 0.6 );
     level.infect_timerdisplay maps\mp\gametypes\_hud_util::setpoint( "CENTER", "TOP", 0, 10 );
-    level.infect_timerdisplay.label = &"Infected Cooldown: ^3";
+    level.infect_timerdisplay.label = &"Infected Cooldown: ^6";
     level.infect_timerdisplay settimer( 15 );
     level.infect_timerdisplay.alpha = 0;
     level.infect_timerdisplay fadeovertime( 1.0 );

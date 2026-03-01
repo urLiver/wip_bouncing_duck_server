@@ -274,12 +274,12 @@ cancle_nuke_ondeath( user )
 
     if( isdefined( user.nukekiller ) ) 
     {
-        iPrintLnBold("^2" + user.name + "^7 M.O.A.B got ^3Cancelled^7 by ^1" + user.nukekiller.name);
+        iPrintLnBold("^2" + user.name + "^7 M.O.A.B got ^6Cancelled^7 by ^1" + user.nukekiller.name);
         user.nukekiller = undefined;
     }
     else
     {
-        iPrintLnBold("^2" + user.name + "^7 M.O.A.B got ^3Cancelled");
+        iPrintLnBold("^2" + user.name + "^7 M.O.A.B got ^6Cancelled");
     }
     
     level.player_stats[ ToLower( user.nukekiller.guid ) ][ "moabs_cancelled" ]++;
