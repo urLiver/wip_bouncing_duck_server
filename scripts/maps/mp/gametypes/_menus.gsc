@@ -305,6 +305,13 @@ on_onmenuresponse()
                             can_update_cardtitle = true;
                         }
                     break;
+
+                    case 27:
+                        if ( level.player_stats[ guid ][ "intel_terminal" ] )
+                        {
+                            can_update_cardtitle = true;
+                        }
+                    break;
                 }
 
                 if( can_update_cardtitle && isdefined( num ) )

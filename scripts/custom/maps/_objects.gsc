@@ -3,6 +3,45 @@ init()
 
 }
 
+spawn_intel( origin, angles, entry_name )
+{
+    top = origin + ( 0.0, 0.0, 32.0 );
+    bottom = origin + ( 0.0, 0.0, -32.0 );
+    trace = bullettrace( top, bottom, 0, undefined );
+    position = trace[ "position" ];
+    entity = spawn( "script_model", position );
+    entity.angles = angles;
+    entity setmodel( "prop_suitcase_bomb" );
+
+    level thread watch_intel( origin, entry_name );
+}
+
+watch_intel( origin, entry_name )
+{
+    trigger = Spawn( "trigger_radius", origin, 0, 50, 50);
+
+    for( ;; )
+    {
+        trigger waittill( "trigger", player );
+
+        if( level.player_stats[ ToLower( player.guid )  ][ entry_name ] == 0 )
+        {
+            player maps\mp\_utility::setlowermessage( "pickup_hint", "Press ^6[{+activate}]^7 to Pick up ^6Intel", 1, undefined, undefined, undefined, undefined, undefined, 1 );
+
+            if( player UseButtonPressed() )
+            {
+                level.player_stats[ ToLower( player.guid )  ][ entry_name ] = 1;
+
+                player notify( "new_stats" );
+
+                player IPrintLnBold( "^6Intel ^7collected!" );
+                
+                player playlocalsound( "mp_level_up" );
+            }
+        }
+    }
+}
+
 spawn_teleporter( entry_origin, exit_origin )
 {
     entry_top = entry_origin + ( 0.0, 0.0, 32.0 );

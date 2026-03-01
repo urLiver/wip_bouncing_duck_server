@@ -106,7 +106,7 @@
 		itemDef
 		{
 			rect 6 112 100 12 8 8 
-			forecolor 0 0 0 0.75
+			forecolor 0 0 0 0.6
 			background "white"
 			style 3
 			visible when ( dvarbool( "r_killstreak" ) )

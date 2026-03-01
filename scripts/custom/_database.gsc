@@ -22,7 +22,8 @@ init()
         "render_distance",
         "fullbright",
         "xp_text",
-        "render_killstreak"
+        "render_killstreak",
+        "intel_terminal"
     ];
 }
 
@@ -131,23 +132,26 @@ update_dvars()
     fullbright =  [ "1", "3", "2" ];
     fullbright_text =  [ "Default", "Grey Lightmap", "White Lightmap" ];
 
-    self setclientdvar( "rank_prestige_unlocked", level.player_stats[ guid ][ "prestige" ] );
-    self setclientdvar( "moabs_cancelled", level.player_stats[ guid ][ "moabs_cancelled" ] );
-    self setclientdvar( "moabs_called", level.player_stats[ guid ][ "moabs_called" ] );
-    self setclientdvar( "total_kills", level.player_stats[ guid ][ "total_kills" ] );
-    self setclientdvar( "total_deaths", level.player_stats[ guid ][ "total_deaths" ] );
-    self setclientdvar( "tis_destroyed", level.player_stats[ guid ][ "tis_destroyed" ] );
-    self setclientdvar( "chickens_killed", level.player_stats[ guid ][ "chickens_killed" ] );
-    self setclientdvar( "highest_killstreak", level.player_stats[ guid ][ "highest_killstreak" ] );
-    self setclientdvar( "highest_melee_killstreak", level.player_stats[ guid ][ "highest_melee_killstreak" ] );
-    self setclientdvar( "infected_kills", level.player_stats[ guid ][ "infected_kills" ] );
-    self setClientDvar( "r_zfar", render_distance[ level.player_stats[ ToLower( guid ) ][ "render_distance" ] ] );
-    self setClientDvar( "r_zfar_text", render_distance_text[ level.player_stats[ ToLower( guid ) ][ "render_distance" ] ] );
-    self setClientDvar( "r_lightmap", fullbright[ level.player_stats[ ToLower( guid ) ][ "fullbright" ] ] );
-    self setClientDvar( "r_lightmap_text", fullbright_text[ level.player_stats[ ToLower( guid ) ][ "fullbright" ] ] );
-    self setClientDvar( "r_lightmap_text", fullbright_text[ level.player_stats[ ToLower( guid ) ][ "fullbright" ] ] );
-    self setClientDvar( "r_xp", level.player_stats[ guid ][ "xp_text" ] );
-    self setClientDvar( "r_killstreak", level.player_stats[ guid ][ "render_killstreak" ] );
+    self setclientdvars(
+        "rank_prestige_unlocked", level.player_stats[ guid ][ "prestige" ],
+        "moabs_cancelled", level.player_stats[ guid ][ "moabs_cancelled" ],
+        "moabs_called", level.player_stats[ guid ][ "moabs_called" ],
+        "total_kills", level.player_stats[ guid ][ "total_kills" ],
+        "total_deaths", level.player_stats[ guid ][ "total_deaths" ],
+        "tis_destroyed", level.player_stats[ guid ][ "tis_destroyed" ],
+        "chickens_killed", level.player_stats[ guid ][ "chickens_killed" ],
+        "highest_killstreak", level.player_stats[ guid ][ "highest_killstreak" ],
+        "highest_melee_killstreak", level.player_stats[ guid ][ "highest_melee_killstreak" ],
+        "infected_kills", level.player_stats[ guid ][ "infected_kills" ],
+        "r_zfar", render_distance[ level.player_stats[ ToLower( guid ) ][ "render_distance" ] ],
+        "r_zfar_text", render_distance_text[ level.player_stats[ ToLower( guid ) ][ "render_distance" ] ],
+        "r_lightmap", fullbright[ level.player_stats[ ToLower( guid ) ][ "fullbright" ] ],
+        "r_lightmap_text", fullbright_text[ level.player_stats[ ToLower( guid ) ][ "fullbright" ] ],
+        "r_lightmap_text", fullbright_text[ level.player_stats[ ToLower( guid ) ][ "fullbright" ] ],
+        "r_xp", level.player_stats[ guid ][ "xp_text" ],
+        "r_killstreak", level.player_stats[ guid ][ "render_killstreak" ],
+        "intel_terminal", level.player_stats[ guid ][ "intel_terminal" ]
+    );
 
     if( level.player_stats[ guid ][ "xp_text" ] && self.xptextcur.alpha == 0.0 && self.xptextmax.alpha == 0.0 )
     {

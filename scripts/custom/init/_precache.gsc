@@ -6,6 +6,7 @@ init()
 
     precachemodel( "vehicle_b2_bomber" );
     precachemodel( "vehicle_mig29_desert" );
+    precachemodel( "prop_suitcase_bomb" );
 
     precacheshader( "death_moab" );
     precacheshader( "iw5_cardicon_frank" );

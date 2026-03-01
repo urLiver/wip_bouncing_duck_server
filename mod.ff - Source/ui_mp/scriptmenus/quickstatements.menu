@@ -3,6 +3,7 @@
 
 #include "ui/pages/prestige.inc"
 #include "ui/pages/cardtitles.inc"
+#include "ui/pages/cardtitles_page2.inc"
 #include "ui/pages/information.inc"
 #include "ui/pages/mod_settings.inc"
 
@@ -19,4 +20,12 @@
 		RENDER_CARDTITLE_SELECTION;
 	}
 
+	menuDef
+	{
+		name "menu_cardtitles_page2"
+
+		CUSTOM_WINDOW_SETUP( WINDOW_CARDTITLE_W, WINDOW_CARDTITLE_H );
+
+		RENDER_CARDTITLE_PAGE2_SELECTION;
+	}
 }

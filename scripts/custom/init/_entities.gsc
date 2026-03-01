@@ -5,9 +5,9 @@ init()
         elem delete();
     }
 
-    foreach( entry in getentarray() )
+    foreach( entry in GetEntArray( "destructible_toy", "targetname" ) )
     {
-        if( isdefined( entry.targetname ) && entry.targetname == "destructible_toy" && isdefined( entry.model ) && issubstr( entry.model, "chicken" ) )
+        if( isdefined( entry.model ) && issubstr( entry.model, "chicken" ) )
         {
             entry thread on_damage_chicken();
         }

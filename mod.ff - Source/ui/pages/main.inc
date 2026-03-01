@@ -123,9 +123,10 @@
 		WINDOW_SELECTOR( 2, "Mute Players", open "menu_mute";, "tab_time_2" ); \
 		WINDOW_SELECTOR( 3, "Friends", open popup_friends, "tab_time_3" ); \
 		WINDOW_SELECTOR( 4, "Prestige", open "menu_prestige", "tab_time_4" ); \
-		WINDOW_SELECTOR( 5, "Cardtitle", open "menu_cardtitles", "tab_time_5" ); \
-		WINDOW_SELECTOR( 6, "Mod Settings", open "menu_mod_settings", "tab_time_6" ); \
-		WINDOW_SELECTOR( 7, "Information", open "menu_information", "tab_time_7" ); \
-		WINDOW_SELECTOR( 8, "^1Leave Game", open "popup_leavegame", "tab_time_8" ); \
+		WINDOW_SELECTOR( 5, "Cardtitles", open "menu_cardtitles", "tab_time_5" ); \
+		WINDOW_SELECTOR( 6, "Cardtitles Page 2", open "menu_cardtitles_page2", "tab_time_6" ); \
+		WINDOW_SELECTOR( 7, "Mod Settings", open "menu_mod_settings", "tab_time_7" ); \
+		WINDOW_SELECTOR( 8, "Information", open "menu_information", "tab_time_8" ); \
+		WINDOW_SELECTOR( 9, "^1Leave Game", open "popup_leavegame", "tab_time_9" ); \
 		WINDOW_SPACER( 4 ); \
-		WINDOW_SPACER( 8 );
+		WINDOW_SPACER( 9 );

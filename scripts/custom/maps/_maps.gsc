@@ -113,6 +113,8 @@ add_map( name, hard, map_function )
 
 map_terminal()
 {
+    scripts\custom\maps\_objects::spawn_intel( ( 2864, 2743, 52 ), ( 0, -90, 0 ), "intel_terminal" );
+
     scripts\custom\maps\_objects::spawn_teleporter( ( 1580, 7090, 205 ), ( 1780, 7090, 205 ) );
     scripts\custom\maps\_objects::spawn_teleporter( ( 1780, 7290, 205 ), ( 1580, 7290, 205 ) );
 

@@ -31,6 +31,7 @@ init()
     level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_gazin";
     level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_golden_guns";
     level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_knife";
+    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_mastodon";
 
     level.playerstatus_icons = [];
     level.playerstatus_icons[ level.playerstatus_icons.size ] = "cardicon_weed";
