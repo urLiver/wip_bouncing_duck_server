@@ -8,26 +8,33 @@ init()
     SetDvar("g_TeamName_Axis", "^3INFECTED");
     SetDvar("g_scorescolor_axis", "1 0.64 0 0.75");
     SetDvar("g_scorescolor_allies", "0 1 0 0.75");
-    SetDvar( "motd", "**^3Gnome Peniz Picture here^7**" );
-    SetDvar( "sv_consoleNameSay", "^3Gnome Peniz" );
-    SetDvar( "sv_consoleNameTell", "^3Gnome Peniz" );
-    SetDvar( "sv_sayName", "^3Gnome Peniz" );
+    SetDvar( "sv_consoleNameSay", "^6BD" );
+    SetDvar( "sv_consoleNameTell", "^6BD" );
+    SetDvar( "sv_sayName", "^6BD" );
 
     SetDvar( "scr_xpscale", "2" );
             
     setDvar( "sv_enableBounces", 1 );
     setDvar( "sv_allanglesbounces", 1 );
-    setDvar( "sv_enableDoubleTaps", 0 );
+    setDvar( "sv_enableDoubleTaps", 1 );
 
     setDvar( "g_playercollision", 2 );
     setDvar( "g_playerejection", 2 );
     setDvar( "g_playercollisionejectspeed", 25 );
     setDvar( "g_gravity", 800 );
-
+    setDvar( "g_speed", 220 );
+    
     setDvar( "jump_disableFallDamage", 1 );
     setDvar( "jump_height", 45 );
-    setDvar( "jump_slowdownEnable", 0 );
+    setDvar( "jump_slowdownEnable", 1 );
     setDvar( "jump_autoBunnyHop", 0 );
-    setDvar( "jump_ladderpushvel", 256 );
+    setDvar( "jump_ladderpushvel", 128 );
     setDvar( "jump_stepSize", 18 );
+}
+
+setup_client_dvars()
+{
+    self setclientdvar( "cg_scoreboardPingText", "1" );
+    self setclientdvar( "cg_teamcolor_allies", "0 1 0 1" );
+    self setclientdvar( "cg_teamcolor_axis", "1 0.64 0 1" );
 }

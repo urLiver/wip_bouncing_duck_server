@@ -36,10 +36,7 @@ on_connect()
 
         player thread maps\mp\gametypes\infect::onplayerdisconnect();
 
-        player setclientdvar( "cg_scoreboardPingText", "1" );
-        player setclientdvar( "cg_teamcolor_allies", "0 1 0 1" );
-        player setclientdvar( "cg_teamcolor_axis", "1 0.64 0 1" );
-        player setclientdvar( "motd", "**^3Gnome Peniz Picture here**" );
+        player thread scripts\custom\init\_dvars::setup_client_dvars();
 
         player.melee_killstreak = 0;
         player.normal_killstreak = 0;

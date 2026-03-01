@@ -181,17 +181,6 @@ on_onmenuresponse()
                         self setClientDvar( "r_killstreak", level.player_stats[ guid ][ "render_killstreak" ] );
                     break;
                     
-                    // Old settings currently not used might change in the future
-                    case "MAP":
-                        level.player_stats[ guid ][ "simple_map" ] = ! level.player_stats[ guid ][ "simple_map" ];
-                        self setClientDvar( "r_simple_map", level.player_stats[ guid ][ "simple_map" ] );
-                    break;
-
-                    case "COMPASS":
-                        level.player_stats[ guid ][ "compass" ] = ! level.player_stats[ guid ][ "compass" ];
-                        self setClientDvar( "r_compass", level.player_stats[ guid ][ "compass" ] );
-                    break;
-
                     case "XP":
                         level.player_stats[ guid ][ "xp_text" ] = ! level.player_stats[ guid ][ "xp_text" ];
                         self setClientDvar( "r_xp", level.player_stats[ guid ][ "xp_text" ] );

@@ -135,3 +135,4 @@
         STRING( 0, "Render Distance", "set_0", "SETTING:RENDER_DISTANCE", "r_zfar_text" ); \
         STRING( 1, "Fullbright", "set_1", "SETTING:FULLBRIGHT", "r_lightmap_text" ); \
         BOOL( 2, "Render Killstreak", "set_2", "SETTING:RENDERKILLSTREAK", "r_killstreak" );
+        BOOL( 3, "Render XP Text", "set_3", "SETTING:XP", "r_xp" );

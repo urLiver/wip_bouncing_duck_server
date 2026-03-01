@@ -39,9 +39,5 @@ Put mods and scripts folder on your server
 Enjoy :D
 
 ## Future Plans of the the Project:
-* Turn scripts into a rebuild of the decompiled scripts paths so _damage will be in scripts\maps\mp\gametypes\ matching the gamepath of maps\mp\gametypes\ and a custom folder for anything that we add to the game but named similar to the games files such as _maps
 * Replace the _chat.gsc file with the one from ug_jugg and update it so it loads the roles from a custom file
-* Update mod.ff to include more features such as a custom hud
-  * Add Custom Hud: Killstreak next to minimap with gradien_fadein handled via dvar and button instructions below the map
-  * Change Dvar Values to Claudi0s Dvar Values
-  * Update Text on Information Page to show proper Credits and Changelog 
+* Update mod.ff to include more features
