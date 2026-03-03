@@ -1,6 +1,62 @@
-// file used for any and only level.vars that need and init onetime so we dont cluster _init.gsc
 init()
 {
+    precachestring( &"RANK_PROMOTED" );  
+
+    precachelocationselector( "map_artillery_selector" );
+
+    precachemodel( "vehicle_b2_bomber" );
+    precachemodel( "vehicle_mig29_desert" );
+    precachemodel( "prop_suitcase_bomb" );
+
+    precacheshader( "death_moab" );
+    precacheshader( "iw5_cardicon_frank" );
+    precacheshader( "iw5_cardicon_cat" );
+    precacheshader( "cardicon_weed" );
+    precacheshader( "iw5_cardicon_devil" );
+    precacheshader( "cardicon_gears" );
+
+    precachestatusicon( "iw5_cardicon_frank" );
+    precachestatusicon( "iw5_cardicon_cat" );
+    precachestatusicon( "cardicon_weed" );
+    precachestatusicon( "iw5_cardicon_devil" );
+    precachestatusicon( "cardicon_gears" );
+
+    precachemenu( "menu_window" );
+
+    precacheminimapicon( "compass_objpoint_airstrike_friendly" );
+    precacheminimapicon( "compass_objpoint_airstrike_busy" );
+
+    SetDvar( "sv_voice", 1 );
+    SetDvar( "sv_cheats", 0 );
+    SetDvar( "g_teamicon_allies", "iw5_cardicon_mushroom" );
+    SetDvar("g_TeamName_Allies", "^2SURVIVORS");
+    SetDvar( "g_teamicon_axis", "iw5_cardicon_cooking" );
+    SetDvar("g_TeamName_Axis", "^3INFECTED");
+    SetDvar("g_scorescolor_axis", "1 0.64 0 0.75");
+    SetDvar("g_scorescolor_allies", "0 1 0 0.75");
+    SetDvar( "sv_consoleNameSay", "^6BD" );
+    SetDvar( "sv_consoleNameTell", "^6BD" );
+    SetDvar( "sv_sayName", "^6BD" );
+
+    SetDvar( "scr_xpscale", "2" );
+            
+    setDvar( "sv_enableBounces", 1 );
+    setDvar( "sv_allanglesbounces", 1 );
+    setDvar( "sv_enableDoubleTaps", 1 );
+
+    setDvar( "g_playercollision", 2 );
+    setDvar( "g_playerejection", 2 );
+    setDvar( "g_playercollisionejectspeed", 25 );
+    setDvar( "g_gravity", 800 );
+    setDvar( "g_speed", 220 );
+    
+    setDvar( "jump_disableFallDamage", 1 );
+    setDvar( "jump_height", 45 );
+    setDvar( "jump_slowdownEnable", 1 );
+    setDvar( "jump_autoBunnyHop", 0 );
+    setDvar( "jump_ladderpushvel", 128 );
+    setDvar( "jump_stepSize", 18 );
+
 	level.joiners = [];
     
     level.playercards_icons = [];
@@ -68,8 +124,6 @@ init()
     level._effect[ "nuke_aftermath" ] = loadfx( "dust/nuke_aftermath_mp" );
 
     level.nukeinfo = spawnstruct();
-
-    level.killstreakfuncs[ "nuke" ] = scripts\custom\killstreaks\_nuke::tryusenuke;
     
     level.succes_full_nukes = 0;
     

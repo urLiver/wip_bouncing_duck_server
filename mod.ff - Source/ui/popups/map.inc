@@ -1,4 +1,4 @@
-#define RENDER_MAP() \
+#define RenderMap() \
 		onOpen \
 		{ \
             lerp x from 640 to 0 over "0.25"; \

@@ -1,6 +1,6 @@
 init()
 {
-    
+	replacefunc( maps\mp\killstreaks\_nuke::tryusenuke, ::tryusenuke );
 }
 
 ui_nuke_hide()

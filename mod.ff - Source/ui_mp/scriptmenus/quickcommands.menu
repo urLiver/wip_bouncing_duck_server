@@ -1,13 +1,12 @@
-#include "ui/style/window.inc"
-#include "ui/style/defines.inc"
+#include "ui/style/windows.inc"
+#include "ui/style/variables.inc"
 
-#include "ui/pages/prestige.inc"
-#include "ui/pages/cardtitles.inc"
-#include "ui/pages/information.inc"
-#include "ui/pages/mod_settings.inc"
+#include "ui/windows/information.inc"
+#include "ui/windows/settings.inc"
+#include "ui/windows/main.inc"
+#include "ui/windows/customizations.inc"
 
-#include "ui/pages/main.inc"
-#include "ui/pages/map.inc"
+#include "ui/popups/map.inc"
 
 {
 	menuDef
@@ -17,7 +16,7 @@
 		visible 1 
 		blurWorld 4.8
 
-		RENDER_MAIN;
+		RenderMainWindow;
 	}
 
 	menuDef
@@ -28,41 +27,41 @@
 		blurWorld 4.8
         decoration
 
-		RENDER_MAP;
+		RenderMap;
 	}
 	
 	menuDef
 	{
-		name "menu_prestige"
-
-		WINDOW_SETUP;
-
-		RENDER_PRESTIGE_SELECTION;
-	}
-
-	menuDef
-	{
 		name "menu_mod_settings"
 
-		WINDOW_ADDON_SETUP( "Mod Settings" );
+		WindowMw3Stlye( "Mod Settings" );
 
-		RENDER_MOD_SETTINGS;
+		RenderSettings;
 	}
 
 	menuDef
 	{
 		name "menu_information"
 
-		CUSTOM_WINDOW_SETUP( INFORMATION_W, INFORMATION_H );
+		CustomWindow( INFORMATION_W, INFORMATION_H );
 		
-		RENDER_INFORMATION;
+		RenderInformations;
+	}
+
+	menuDef
+	{
+		name "menu_prestige"
+
+		CustomWindow( CONTAINER_INNER_W, CONTAINER_INNER_H );
+
+		RenderPrestiges;
 	}
 
 	menuDef
 	{
 		name "menu_mute"
 
-		WINDOW_SETUP;
+		CustomWindow( CONTAINER_INNER_W, CONTAINER_INNER_H );
 
 		itemDef
 		{

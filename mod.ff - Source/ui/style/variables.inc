@@ -1,4 +1,5 @@
-#ifndef MENU_W
+#ifndef VARIABLES_INC
+    #define VARIABLES_INC 1
 
     #define PRIMARY_COLOR 0.341 0.373 0.812 1
 

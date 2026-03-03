@@ -1,31 +1,24 @@
-#include "ui/style/window.inc"
-#include "ui/style/defines.inc"
+#include "ui/style/windows.inc"
+#include "ui/style/variables.inc"
 
-#include "ui/pages/prestige.inc"
-#include "ui/pages/cardtitles.inc"
-#include "ui/pages/cardtitles_page2.inc"
-#include "ui/pages/information.inc"
-#include "ui/pages/mod_settings.inc"
-
-#include "ui/pages/main.inc"
-#include "ui/pages/map.inc"
+#include "ui/windows/customizations.inc"
 
 {
 	menuDef
 	{
 		name "menu_cardtitles"
 
-		CUSTOM_WINDOW_SETUP( WINDOW_CARDTITLE_W, WINDOW_CARDTITLE_H );
+		CustomWindow( WINDOW_CARDTITLE_W, WINDOW_CARDTITLE_H );
 
-		RENDER_CARDTITLE_SELECTION;
+		RenderCardtitles;
 	}
 
 	menuDef
 	{
 		name "menu_cardtitles_page2"
 
-		CUSTOM_WINDOW_SETUP( WINDOW_CARDTITLE_W, WINDOW_CARDTITLE_H );
+		CustomWindow( WINDOW_CARDTITLE_W, WINDOW_CARDTITLE_H );
 
-		RENDER_CARDTITLE_PAGE2_SELECTION;
+		RenderIntelCardtitles;
 	}
 }
