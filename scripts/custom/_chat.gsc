@@ -60,7 +60,7 @@ chatlistener()
         
         cmds = StrTok( msg, " " );
 
-        if( !isdefined( cmds[ 0 ] ) )
+        if( ! isdefined( cmds[ 0 ] ) )
         {
             continue;
         }
@@ -71,34 +71,6 @@ chatlistener()
         {
             case "prestige":
                 player thread scripts\custom\_database::promote_prestige();
-            break;
-
-            case "set_prestige":
-                if( isdefined( cmds[ 1 ] ) )
-                {
-                    switch( cmds[ 1 ] )
-                    {
-                        case "Weed":
-                            player thread scripts\custom\_database::set_prestige( 42, "Prestige set to: ^2Weed", "Smoke ^2Weed^7 everyday" );
-                        break;
-
-                        case "Fish":
-                            player thread scripts\custom\_database::set_prestige( 43, "Prestige set to: ^4Fish", "^4As Sloopy as some Dicks they say" );
-                        break;
-
-                        case "Itchy":
-                            player thread scripts\custom\_database::set_prestige( 44, "Prestige set to: ^6Itchy", "^6HOLD UP WHAT IN THE ACTUALL FUCK??" );
-                        break;
-
-                        case "Clippy":
-                            player thread scripts\custom\_database::set_prestige( 45, "Prestige set to: ^6Clippy", "^6The one and only" );
-                        break;
-
-                        default:
-                            player thread scripts\custom\_database::set_prestige( int( cmds[ 1 ] ) );
-                        break;
-                    }
-                }
             break;
             
             case "stats":

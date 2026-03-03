@@ -22,7 +22,7 @@ init()
     add_map( "mp_courtyard_ss", 0 );
     add_map( "mp_rust", 0 );
     add_map( "mp_terminal_cls", 0, ::map_terminal );
-    add_map( "mp_nuked", 0 );
+    add_map( "mp_nuked", 0, ::map_nuketown );
     add_map( "mp_village", 0 );
     add_map( "mp_favela", 0 );
     add_map( "mp_test", 0 );
@@ -56,7 +56,7 @@ init()
     add_map( "mp_storm", 0 );
     add_map( "mp_subbase", 0 );
     add_map( "mp_vacant", 0 );
-    add_map( "mp_backlot_sh", 1 );
+    add_map( "mp_backlot_sh", 1, ::map_backlot_sh );
     add_map( "mp_firingrange", 0 );
     add_map( "mp_radiation_sh", 0 );
     add_map( "mp_showdown_sh", 0 );
@@ -67,15 +67,15 @@ init()
     add_map( "mp_killhouse", 0 );
     add_map( "mp_geometric", 1 );
     add_map( "mp_mideast", 0 );
-    add_map( "mp_brecourt", 1 );
+    add_map( "mp_brecourt", 1, ::map_wasteland );
     add_map( "mp_wasteland_sh", 0 );
     add_map( "mp_offshore_sh", 0 );
-    add_map( "mp_factory_sh", 0 );
+    add_map( "mp_factory_sh", 0, ::map_der_riese );
     add_map( "mp_seatown_sh", 0 );
     add_map( "mp_highrise_sh", 1 );
     add_map( "mp_boomtown", 0 );
     add_map( "mp_park", 0 );
-    add_map( "mp_trailerpark", 0 ); 
+    add_map( "mp_trailerpark", 0, ::map_trailerpark ); 
     add_map( "mp_meteora", 0 );
     add_map( "mp_nola", 0 );
     add_map( "mp_overgrown", 0 );
@@ -89,7 +89,8 @@ init()
     add_map( "mp_cha_quad", 0 );
     add_map( "mp_overwatch", 0 );
     add_map( "so_deltacamp", 0 );
-    add_map( "mp_broadcast", 1 );
+    add_map( "mp_broadcast", 1, ::map_broadcast );
+    add_map( "mp_pipeline", 0, ::map_pipeline );
 }
 
 add_map( name, hard, map_function )
@@ -121,3 +122,45 @@ map_terminal()
     scripts\custom\maps\_objects::spawn_teleporter( ( 3009, 4287, 203 ), ( 2776, 4287, 59 ) );
     scripts\custom\maps\_objects::spawn_teleporter( ( 2456, 6111, 203 ), ( 4103, 2157, 204 ) );
 }
+
+map_trailerpark()
+{
+    scripts\custom\maps\_objects::spawn_intel_decoy( ( -573, 548, 88 ), ( 0, 22, 0 ) );
+    scripts\custom\maps\_objects::spawn_intel( ( -573, 582, 47 ), ( 0, 0, 0 ), "intel_trailerpark", 40 );
+}
+
+map_pipeline()
+{
+    scripts\custom\maps\_objects::spawn_intel( ( 1483, -40, -63 ), ( 0, 100, 0 ), "intel_pipeline", 30 );
+}
+
+map_backlot_sh()
+{
+    scripts\custom\maps\_objects::spawn_intel( ( -1266, -588, -107 ), ( 0, -1.2, 0 ), "intel_backlot" );
+}
+
+map_der_riese()
+{
+    scripts\custom\maps\_objects::spawn_intel( ( 1464, -1379, 146 ), ( 0, -159, 0 ), "intel_derriese" );
+}
+
+map_wasteland()
+{
+    scripts\custom\maps\_objects::spawn_intel( ( -1403, -3681, 87 ), ( 0, -119, 0 ), "intel_wasteland" );
+}
+
+map_nuketown()
+{
+    scripts\custom\maps\_objects::spawn_intel( ( 1310, 1141, -44 ), ( 0, -74, 0 ), "intel_nuketown", 30 );
+}
+
+map_broadcast()
+{
+    scripts\custom\maps\_objects::spawn_intel( ( 436, -191, 40 ), ( 0, -59, 0 ), "intel_broadcast", 10 );
+
+    scripts\custom\maps\_objects::spawn_ineractiv_teleporter( ( -525, 1151, 48 ), ( 957, -38, 147 ), 10 );
+
+    scripts\custom\maps\_objects::spawn_teleporter( ( 655, 651, 147 ), ( 583, 758, 147 ) );
+}
+
+// work for tomorrow finish those and add the cards matching, then also put new hidden prestige images in iwd and also find good thing to do for hiddne prestiges

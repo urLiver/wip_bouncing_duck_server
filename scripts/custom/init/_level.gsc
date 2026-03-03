@@ -32,6 +32,13 @@ init()
     level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_golden_guns";
     level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_knife";
     level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_mastodon";
+    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_falling_money";
+    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_money_bags";
+    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_punch_in_the_face";
+    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_redrocket";
+    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_burger_town";
+    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_mw_character_delta_01";
+    level.playercards_icons[ level.playercards_icons.size ] = "iw5_cardtitle_pinup";
 
     level.playerstatus_icons = [];
     level.playerstatus_icons[ level.playerstatus_icons.size ] = "cardicon_weed";

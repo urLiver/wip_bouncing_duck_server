@@ -200,7 +200,37 @@ on_onmenuresponse()
             break;
 
             case "PRESTIGE":
-                self scripts\custom\_database::set_prestige( int( cmds[ 1 ] ) );
+                num = int( cmds[ 1 ] );                  
+                switch ( num )
+                {   
+                    case 42:
+                        if( level.player_stats[ guid ][ "hidden_prestige_1" ]  == 1 )
+                        {
+                            self scripts\custom\_database::set_prestige( num );
+                        }
+                    break;
+                    case 43:
+                        if( level.player_stats[ guid ][ "hidden_prestige_2" ]  == 1 )
+                        {
+                            self scripts\custom\_database::set_prestige( num );
+                        }
+                    break;
+                    case 44:
+                        if( level.player_stats[ guid ][ "hidden_prestige_3" ]  == 1 )
+                        {
+                            self scripts\custom\_database::set_prestige( num );
+                        }
+                    break;
+                    case 45:
+                        if( level.player_stats[ guid ][ "hidden_prestige_4" ]  == 1 )
+                        {
+                            self scripts\custom\_database::set_prestige( num );
+                        }
+                    break;
+                    default:
+                        self scripts\custom\_database::set_prestige( num );
+                    break;
+                }
             break;
 
             case "CARDTITLE":
@@ -312,8 +342,57 @@ on_onmenuresponse()
                             can_update_cardtitle = true;
                         }
                     break;
-                }
 
+                    case 28:
+                        if ( level.player_stats[ guid ][ "intel_trailerpark" ] )
+                        {
+                            can_update_cardtitle = true;
+                        }
+                    break;
+
+                    case 29:
+                        if ( level.player_stats[ guid ][ "intel_pipeline" ] )
+                        {
+                            can_update_cardtitle = true;
+                        }
+                    break;
+
+                    case 30:
+                        if ( level.player_stats[ guid ][ "intel_backlot" ] )
+                        {
+                            can_update_cardtitle = true;
+                        }
+                    break;
+
+                    case 31:
+                        if ( level.player_stats[ guid ][ "intel_derriese" ] )
+                        {
+                            can_update_cardtitle = true;
+                        }
+                    break;
+
+                    case 32:
+                        if ( level.player_stats[ guid ][ "intel_wasteland" ] )
+                        {
+                            can_update_cardtitle = true;
+                        }
+                    break;
+
+                    case 33:
+                        if ( level.player_stats[ guid ][ "intel_nuketown" ] )
+                        {
+                            can_update_cardtitle = true;
+                        }
+                    break;
+
+                    case 34:
+                        if ( level.player_stats[ guid ][ "intel_broadcast" ] )
+                        {
+                            can_update_cardtitle = true;
+                        }
+                    break;
+                }
+                
                 if( can_update_cardtitle && isdefined( num ) )
                 {
                     level.player_stats[ guid ][ "playercard_icon" ] = num;

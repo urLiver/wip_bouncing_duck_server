@@ -43,3 +43,6 @@ Enjoy :D
 * Update mod.ff to include more features
 * add map vote hud like csgo servers do or refactor the thing bound to b to do that
 * add last one alive having the kill icon above
+* convert endgame stats saving to all thread and jsut waiting till all threads are done
+* conver the qickactiosn menu to vote map
+* find challenge for hidden prestiges

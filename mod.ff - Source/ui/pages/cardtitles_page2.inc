@@ -81,5 +81,12 @@
 		    exp text (  quest ) \
 		}
 
-#define RENDER_CARDTITLE_PAGE2_SELECTION() \
-		CARDTITLE2( 0, 0, "iw5_cardtitle_mastodon", dvarint( "intel_terminal" ), 1, "Terminal Intel", "CARDTITLE:27", "ct_time_27" );
+#define RENDER_CARDTITLE_PAGE2_SELECTION() \ 
+		CARDTITLE2( 0, 0, "iw5_cardtitle_mastodon", dvarint( "intel_terminal" ), 1, "Intel Terminal", "CARDTITLE:27", "ct_time_27" ); \
+		CARDTITLE2( 0, 1, "iw5_cardtitle_falling_money", dvarint( "intel_trailerpark" ), 1, "Intel Trailerpark", "CARDTITLE:28", "ct_time_28" ); \
+		CARDTITLE2( 0, 2, "iw5_cardtitle_money_bags", dvarint( "intel_pipeline" ), 1, "Intel Pipeline", "CARDTITLE:29", "ct_time_29" ); \
+		CARDTITLE2( 1, 0, "iw5_cardtitle_punch_in_the_face", dvarint( "intel_backlot" ), 1, "Intel Backlot", "CARDTITLE:30", "ct_time_30" ); \
+		CARDTITLE2( 1, 1, "iw5_cardtitle_redrocket", dvarint( "intel_derriese" ), 1, "Intel der Riese", "CARDTITLE:31", "ct_time_31" ); \
+		CARDTITLE2( 1, 2, "iw5_cardtitle_burger_town", dvarint( "intel_wasteland" ), 1, "Intel Wasteland", "CARDTITLE:32", "ct_time_32" ); \
+		CARDTITLE2( 2, 0, "iw5_cardtitle_mw_character_delta_01", dvarint( "intel_nuketown" ), 1, "Intel Nuketown", "CARDTITLE:33", "ct_time_33" ); \
+		CARDTITLE2( 2, 1, "iw5_cardtitle_pinup", dvarint( "intel_broadcast" ), 1, "Intel Broadcast", "CARDTITLE:34", "ct_time_34" );

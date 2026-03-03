@@ -59,18 +59,17 @@ do_infected_spawn()
 
     self TakeAllWeapons();
 
+    self maps\mp\_utility::GivePerk( "specialty_tacticalinsertion", 1 );
+
     if( isdefined( level.allow_tks ) && self.stats[ "stats_deathstreak" ].value >= 4 ) 
     {
-        self GiveWeapon( "throwingknife" );
         self SetOffhandPrimaryClass( "throwingknife" );
-        self SetWeaponAmmoClip( "throwingknife_mp", 1 );
+        self GiveWeapon( "throwingknife_mp" );
     }
     else
     {
         self GiveWeapon( "bouncingbetty_mp" );
     }
-
-    self maps\mp\_utility::GivePerk( "specialty_tacticalinsertion", 1 );
 
     pistol = self scripts\custom\_weapons::random_pistol_no_attachments();
 
@@ -91,25 +90,32 @@ do_first_infected_spawn()
     
     self TakeAllWeapons();
 
-    self GiveWeapon( "c4_mp" );
-
+    // self GiveWeapon( "c4_mp" );
     self maps\mp\_utility::GivePerk( "specialty_tacticalinsertion", 1 );
 
+    self SetOffhandPrimaryClass( "throwingknife" );
+    self GiveWeapon( "throwingknife_mp" );
+
     pistol = self scripts\custom\_weapons::random_pistol_no_attachments();
-    rpg = self scripts\custom\_weapons::random_launcher();
+    // rpg = self scripts\custom\_weapons::random_launcher();
 
     self GiveWeapon( pistol );
     self SetWeaponAmmoStock( pistol, 0 );
     self SetWeaponAmmoClip( pistol, 0 );
 
-    self GiveWeapon( rpg );
-    self SetWeaponAmmoStock( rpg, 1 );
-    self SetWeaponAmmoClip( rpg, 1 );
+    // self GiveWeapon( rpg );
+    // self SetWeaponAmmoStock( rpg, 1 );
+    // self SetWeaponAmmoClip( rpg, 1 );
 
+    // waittillframeend;
+
+    // self SetSpawnWeapon( rpg );
+    // self SwitchToWeapon( rpg );
+    
     waittillframeend;
 
-    self SetSpawnWeapon( rpg );
-    self SwitchToWeapon( rpg );
+    self SetSpawnWeapon( pistol );
+    self SwitchToWeapon( pistol );
 }
 
 do_any_spawn()

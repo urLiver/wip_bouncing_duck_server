@@ -42,17 +42,49 @@
 			} \
 		}
 
-#define PRESTIGE_LOCKED( column, row ) \
+#define HIDDEN_PRESTIGE( column, row, dvar_name, prestige, response, time ) \
 		itemDef \
 		{ \
 			rect 0 0 PRESTIGE_W PRESTIGE_H 0 0 \
 			style 1 \
             decoration \
             visible 1 \
-			backcolor 1 0.84 0 1 \
+			backcolor PRIMARY_COLOR \
 			exp rect x ( ( column * PRESTIGE_SPACE_X ) ) \
 			exp rect y ( ( row * PRESTIGE_SPACE_Y ) ) \
-			exp material ( "icon_lock" ) \
+		    exp material ( "roundedrect" ) \
+			exp backcolor a ( select ( ( localvarint( time ) > 0 ) , \
+						max( min( ( milliseconds( ) - localvarint( time ) ) / 250 , 1 ) , 0 ), \
+						max( min( 1 - ( milliseconds( ) + localvarint( time ) ) / 250 , 1 ) , 0 ) \
+					) ) \
+    		} \
+        itemDef \
+		{ \
+			rect 0 0 ( PRESTIGE_W - PADDING_S * 2 ) ( PRESTIGE_H - PADDING_S * 2 ) 0 0 \
+			style 1 \
+            type 1 \
+            visible 1 \
+			backcolor 1 1 1 1 \
+			exp rect x ( ( column * PRESTIGE_SPACE_X ) + PADDING_S ) \
+			exp rect y ( ( row * PRESTIGE_SPACE_Y ) + PADDING_S ) \
+		    exp material ( select( ( dvarint( dvar_name ) == 0 ), "icon_lock", ( tableLookup( "mp/rankIconTable.csv", 0, 1, prestige + 1 ) ) ) ) \
+		    exp backcolor r ( select( ( dvarint( dvar_name ) == 0 ), 1, 1 ) ) \
+		    exp backcolor g ( select( ( dvarint( dvar_name ) == 0 ), 0.84, 1 ) ) \
+		    exp backcolor b ( select( ( dvarint( dvar_name ) == 0 ), 0, 1 ) ) \
+			action \
+			{ \
+				play "mouse_click"; \
+                scriptMenuResponse response; \
+			} \
+            onFocus \
+			{ \
+				setLocalVarInt time ( ( 1 ) * milliseconds( ) ); \
+				play "mouse_over"; \
+			} \
+			leaveFocus \
+			{ \
+				setLocalVarInt time ( ( -1 ) * milliseconds( ) ); \
+			} \
 		}
 
 #define RENDER_PRESTIGE_SELECTION() \
@@ -98,7 +130,7 @@
         PRESTIGE( 7, 4, 39, "PRESTIGE:39", "pre_time_39" ); \
         PRESTIGE( 0, 5, 40, "PRESTIGE:40", "pre_time_40" ); \
         PRESTIGE( 1, 5, 41, "PRESTIGE:41", "pre_time_41" ); \
-        PRESTIGE_LOCKED( 2, 5 ); \
-        PRESTIGE_LOCKED( 3, 5 ); \
-        PRESTIGE_LOCKED( 4, 5 ); \
-        PRESTIGE_LOCKED( 5, 5 );
+        HIDDEN_PRESTIGE( 2, 5, "hidden_prestige_1", 42, "PRESTIGE:42", "pre_time_42" ); \
+        HIDDEN_PRESTIGE( 3, 5, "hidden_prestige_2", 43, "PRESTIGE:43", "pre_time_43" ); \
+        HIDDEN_PRESTIGE( 4, 5, "hidden_prestige_3", 44, "PRESTIGE:44", "pre_time_44" ); \
+        HIDDEN_PRESTIGE( 5, 5, "hidden_prestige_4", 45, "PRESTIGE:45", "pre_time_45" );

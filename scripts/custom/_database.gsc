@@ -23,7 +23,18 @@ init()
         "fullbright",
         "xp_text",
         "render_killstreak",
-        "intel_terminal"
+        "hidden_prestige_1",
+        "hidden_prestige_2",
+        "hidden_prestige_3",
+        "hidden_prestige_4",
+        "intel_terminal",
+        "intel_trailerpark",
+        "intel_pipeline",
+        "intel_backlot",
+        "intel_derriese",
+        "intel_wasteland",
+        "intel_nuketown",
+        "intel_broadcast"
     ];
 }
 
@@ -150,7 +161,18 @@ update_dvars()
         "r_lightmap_text", fullbright_text[ level.player_stats[ ToLower( guid ) ][ "fullbright" ] ],
         "r_xp", level.player_stats[ guid ][ "xp_text" ],
         "r_killstreak", level.player_stats[ guid ][ "render_killstreak" ],
-        "intel_terminal", level.player_stats[ guid ][ "intel_terminal" ]
+        "hidden_prestige_1", level.player_stats[ guid ][ "hidden_prestige_1" ],
+        "hidden_prestige_2", level.player_stats[ guid ][ "hidden_prestige_2" ],
+        "hidden_prestige_3", level.player_stats[ guid ][ "hidden_prestige_3" ],
+        "hidden_prestige_4", level.player_stats[ guid ][ "hidden_prestige_4" ],
+        "intel_terminal", level.player_stats[ guid ][ "intel_terminal" ],
+        "intel_trailerpark", level.player_stats[ guid ][ "intel_trailerpark" ],
+        "intel_pipeline", level.player_stats[ guid ][ "intel_pipeline" ],
+        "intel_backlot", level.player_stats[ guid ][ "intel_backlot" ],
+        "intel_derriese", level.player_stats[ guid ][ "intel_derriese" ],
+        "intel_wasteland", level.player_stats[ guid ][ "intel_wasteland" ],
+        "intel_nuketown", level.player_stats[ guid ][ "intel_nuketown" ],
+        "intel_broadcast", level.player_stats[ guid ][ "intel_broadcast" ]
     );
 
     if( level.player_stats[ guid ][ "xp_text" ] && self.xptextcur.alpha == 0.0 && self.xptextmax.alpha == 0.0 )
