@@ -120,7 +120,7 @@ map_terminal()
     scripts\custom\maps\_objects::spawn_teleporter( ( 1780, 7290, 205 ), ( 1580, 7290, 205 ) );
 
     scripts\custom\maps\_objects::spawn_teleporter( ( 3009, 4287, 203 ), ( 2776, 4287, 59 ) );
-    scripts\custom\maps\_objects::spawn_teleporter( ( 2456, 6111, 203 ), ( 4103, 2157, 204 ) );
+    scripts\custom\maps\_objects::spawn_ineractiv_teleporter( ( 2456, 6111, 203 ), ( 4103, 2157, 204 ), 20 );
 }
 
 map_trailerpark()
@@ -162,5 +162,3 @@ map_broadcast()
 
     scripts\custom\maps\_objects::spawn_teleporter( ( 655, 651, 147 ), ( 583, 758, 147 ) );
 }
-
-// work for tomorrow finish those and add the cards matching, then also put new hidden prestige images in iwd and also find good thing to do for hiddne prestiges
