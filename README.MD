@@ -39,8 +39,4 @@ Put mods and scripts folder on your server
 Enjoy :D
 
 ## Future TODOs of the the Project:
-* Either give everyone UAV or add the Kill Icon above the Last alive
-* Convert the on endgame stats saving into single threads so it doesnt lag
-* Come up with ideas on what we could reward the Hidden Prestiges
-* Rewrite the ui section of the mod.ff so styles are not in the actual File for the Ui part, also split up materials so they are on there own categories
-* Add more levels and make a custom main menu, for example in pluto style or similar
+* Convert the on endgame stats saving into single threads so it doesnt lag ( problem is that an unfihsied thread could be killed of, leading to unsaved data )

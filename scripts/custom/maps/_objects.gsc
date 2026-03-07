@@ -3,9 +3,22 @@ init()
 
 }
 
-spawn_wall_reward( from_origin, to_origin, angles, model, entry_name, trigger_range )
+spawn_model( origin, angles, model_name )
 {
+    entity = spawn( "script_model", origin );
+    entity.angles = angles;
+    entity setmodel( model_name );
+}
 
+spawn_model_with_trace( origin, angles, model_name )
+{
+    top = origin + ( 0.0, 0.0, 32.0 );
+    bottom = origin + ( 0.0, 0.0, -32.0 );
+    trace = bullettrace( top, bottom, 0, undefined );
+    position = trace[ "position" ];
+    entity = spawn( "script_model", position );
+    entity.angles = angles;
+    entity setmodel( model_name );
 }
 
 spawn_intel_decoy( origin, angles )
@@ -50,13 +63,13 @@ watch_intel( origin, entry_name, trigger_range, trigger_height )
     {
         trigger waittill( "trigger", player );
 
-        if( level.player_stats[ ToLower( player.guid )  ][ entry_name ] == 0 )
+        if( level.player_stats[ ToLower( player.guid ) ][ entry_name ] == 0 )
         {
             player maps\mp\_utility::setlowermessage( "pickup_hint", "Press ^6[{+activate}]^7 to Pick up ^6Intel", 1, undefined, undefined, undefined, undefined, undefined, 1 );
 
             if( player UseButtonPressed() )
             {
-                level.player_stats[ ToLower( player.guid )  ][ entry_name ] = 1;
+                level.player_stats[ ToLower( player.guid ) ][ entry_name ] = 1;
 
                 player notify( "new_stats" );
 
@@ -156,4 +169,43 @@ flag_protection()
     wait 0.65;
 
     self.flag_protected = undefined;
+}
+
+spawn_sacrifice_trigger( origin, trigger_range, entry_name_axis, entry_name_allies )
+{
+    level thread watch_sacrifice_trigger( origin, trigger_range, entry_name_axis, entry_name_allies );
+}
+
+watch_sacrifice_trigger( origin, trigger_range, entry_name_axis, entry_name_allies )
+{
+    trigger = Spawn( "trigger_radius", origin, 0, trigger_range, 20 );
+
+    for( ;; )
+    {
+        trigger waittill( "trigger", player );
+
+        if( level.player_stats[ ToLower( player.guid ) ][ entry_name_axis ] == 0 && player.team == "axis" )
+        {
+            if( player UseButtonPressed() )
+            {
+                level.player_stats[ ToLower( player.guid ) ][ entry_name_axis ] = 1;
+
+                player notify( "new_stats" );
+
+                player Suicide();
+            }
+        }
+
+        if( level.player_stats[ ToLower( player.guid ) ][ entry_name_allies ] == 0 && player.team == "allies" )
+        {
+            if( player UseButtonPressed() )
+            {
+                level.player_stats[ ToLower( player.guid ) ][ entry_name_allies ] = 1;
+
+                player notify( "new_stats" );
+
+                player Suicide();
+            }
+        }
+    }
 }

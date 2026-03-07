@@ -17,8 +17,8 @@
 	{
 		name "menu_cardtitles_page2"
 
-		CustomWindow( WINDOW_CARDTITLE_W, WINDOW_CARDTITLE_H );
+		CustomWindow( WINDOW_CARDTITLE_W, ( ( WINDOW_CARDTITLE_H / 9 ) * 4 ) );
 
-		RenderIntelCardtitles;
+		RenderSecretCardtitles;
 	}
 }

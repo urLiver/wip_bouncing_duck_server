@@ -34,7 +34,11 @@ init()
         "intel_derriese",
         "intel_wasteland",
         "intel_nuketown",
-        "intel_broadcast"
+        "intel_broadcast",
+        "intel_afghan",
+        "intel_meteora",
+        "sacrifice_axis_crosswalk",
+        "sacrifice_allies_crosswalk"
     ];
 }
 
@@ -172,7 +176,11 @@ update_dvars()
         "intel_derriese", level.player_stats[ guid ][ "intel_derriese" ],
         "intel_wasteland", level.player_stats[ guid ][ "intel_wasteland" ],
         "intel_nuketown", level.player_stats[ guid ][ "intel_nuketown" ],
-        "intel_broadcast", level.player_stats[ guid ][ "intel_broadcast" ]
+        "intel_broadcast", level.player_stats[ guid ][ "intel_broadcast" ],
+        "intel_afghan", level.player_stats[ guid ][ "intel_afghan" ],
+        "intel_meteora", level.player_stats[ guid ][ "intel_meteora" ],
+        "sacrifice_axis_crosswalk", level.player_stats[ guid ][ "sacrifice_axis_crosswalk" ],
+        "sacrifice_allies_crosswalk", level.player_stats[ guid ][ "sacrifice_allies_crosswalk" ]
     );
 
     if( level.player_stats[ guid ][ "xp_text" ] && self.xptextcur.alpha == 0.0 && self.xptextmax.alpha == 0.0 )

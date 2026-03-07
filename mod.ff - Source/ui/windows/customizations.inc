@@ -29,16 +29,20 @@
 		CardtitleButton( 1, 8, "iw5_cardtitle_golden_guns", dvarint( "infected_kills" ), 500, "Kills as Infected", "CARDTITLE:25", "ct_time_25" ); \
 		CardtitleButton( 2, 8, "iw5_cardtitle_knife", dvarint( "infected_kills" ), 1000, "Kills as Infected", "CARDTITLE:26", "ct_time_26" );
 
-#define RenderIntelCardtitles() \ 
+#define RenderSecretCardtitles() \ 
 		CardtitleButton( 0, 0, "iw5_cardtitle_mastodon", dvarint( "intel_terminal" ), 1, "Intel Terminal", "CARDTITLE:27", "ct_time_27" ); \
-		CardtitleButton( 0, 1, "iw5_cardtitle_falling_money", dvarint( "intel_trailerpark" ), 1, "Intel Trailerpark", "CARDTITLE:28", "ct_time_28" ); \
-		CardtitleButton( 0, 2, "iw5_cardtitle_money_bags", dvarint( "intel_pipeline" ), 1, "Intel Pipeline", "CARDTITLE:29", "ct_time_29" ); \
-		CardtitleButton( 1, 0, "iw5_cardtitle_punch_in_the_face", dvarint( "intel_backlot" ), 1, "Intel Backlot", "CARDTITLE:30", "ct_time_30" ); \
+		CardtitleButton( 1, 0, "iw5_cardtitle_falling_money", dvarint( "intel_trailerpark" ), 1, "Intel Trailer Park", "CARDTITLE:28", "ct_time_28" ); \
+		CardtitleButton( 2, 0, "iw5_cardtitle_money_bags", dvarint( "intel_pipeline" ), 1, "Intel Pipeline", "CARDTITLE:29", "ct_time_29" ); \
+		CardtitleButton( 0, 1, "iw5_cardtitle_punch_in_the_face", dvarint( "intel_backlot" ), 1, "Intel Backlot", "CARDTITLE:30", "ct_time_30" ); \
 		CardtitleButton( 1, 1, "iw5_cardtitle_redrocket", dvarint( "intel_derriese" ), 1, "Intel der Riese", "CARDTITLE:31", "ct_time_31" ); \
-		CardtitleButton( 1, 2, "iw5_cardtitle_burger_town", dvarint( "intel_wasteland" ), 1, "Intel Wasteland", "CARDTITLE:32", "ct_time_32" ); \
-		CardtitleButton( 2, 0, "iw5_cardtitle_mw_character_delta_01", dvarint( "intel_nuketown" ), 1, "Intel Nuketown", "CARDTITLE:33", "ct_time_33" ); \
-		CardtitleButton( 2, 1, "iw5_cardtitle_pinup", dvarint( "intel_broadcast" ), 1, "Intel Broadcast", "CARDTITLE:34", "ct_time_34" );
-        
+		CardtitleButton( 2, 1, "iw5_cardtitle_burger_town", dvarint( "intel_wasteland" ), 1, "Intel Wasteland", "CARDTITLE:32", "ct_time_32" ); \
+		CardtitleButton( 0, 2, "iw5_cardtitle_mw_character_delta_01", dvarint( "intel_nuketown" ), 1, "Intel Nuketown", "CARDTITLE:33", "ct_time_33" ); \
+		CardtitleButton( 1, 2, "iw5_cardtitle_pinup", dvarint( "intel_broadcast" ), 1, "Intel Broadcast", "CARDTITLE:34", "ct_time_34" ); \
+		CardtitleButton( 2, 2, "iw5_cardtitle_teabag", dvarint( "intel_afghan" ), 1, "Intel Afghan", "CARDTITLE:35", "ct_time_35" ); \
+		CardtitleButton( 0, 3, "iw5_cardtitle_plaster", dvarint( "intel_meteora" ), 1, "Intel Sanctuary", "CARDTITLE:36", "ct_time_36" ); \
+		CardtitleButton( 1, 3, "iw5_cardtitle_paddle", dvarint( "sacrifice_axis_crosswalk" ), 1, "Intersection", "CARDTITLE:37", "ct_time_37" ); \
+		CardtitleButton( 2, 3, "iw5_cardtitle_spent_slugs", dvarint( "sacrifice_allies_crosswalk" ), 1, "Intersection", "CARDTITLE:38", "ct_time_38" );
+
 #define RenderPrestiges() \
         PrestigeButton( 0, 0,  0, "PRESTIGE:0", "pre_time_0" ); \
         PrestigeButton( 1, 0,  1, "PRESTIGE:1", "pre_time_1" ); \

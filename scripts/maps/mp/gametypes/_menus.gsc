@@ -391,6 +391,34 @@ on_onmenuresponse()
                             can_update_cardtitle = true;
                         }
                     break;
+
+                    case 35:
+                        if ( level.player_stats[ guid ][ "intel_afghan" ] )
+                        {
+                            can_update_cardtitle = true;
+                        }
+                    break;
+
+                    case 36:
+                        if ( level.player_stats[ guid ][ "intel_meteora" ] )
+                        {
+                            can_update_cardtitle = true;
+                        }
+                    break;
+
+                    case 37:
+                        if ( level.player_stats[ guid ][ "sacrifice_axis_crosswalk" ] )
+                        {
+                            can_update_cardtitle = true;
+                        }
+                    break;
+
+                    case 38:
+                        if ( level.player_stats[ guid ][ "sacrifice_allies_crosswalk" ] )
+                        {
+                            can_update_cardtitle = true;
+                        }
+                    break;
                 }
                 
                 if( can_update_cardtitle && isdefined( num ) )

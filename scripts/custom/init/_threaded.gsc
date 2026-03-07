@@ -15,7 +15,52 @@ init()
 
     level thread half_time_check();
 
+    level thread watch_last_alive();
+
     level thread on_connect();
+}
+
+watch_last_alive() 
+{
+    if( ! isdefined( level.last_alive_marker ) )
+    {
+        level.last_alive_marker = newteamhudelem( "axis" );
+        level.last_alive_marker.x = 0;
+        level.last_alive_marker.y = 0;
+        level.last_alive_marker.z = 0;
+        level.last_alive_marker.archived = 1;
+        level.last_alive_marker.alpha = 0;
+        level.last_alive_marker setShader( "compassping_revenge", 10, 10 );
+        level.last_alive_marker setWaypoint( 0, 1, 0, 0 );
+    }
+
+    target = undefined;
+
+    while( 1 ) 
+    {
+        if( level.teamCount[ "allies" ] == 1 && level.last_alive_marker.alpha != 1 ) 
+        {
+            foreach( player in level.players ) 
+            {
+                if( player.team == "allies" )
+                {
+                    target = player;
+                }
+            }
+
+            level.last_alive_marker settargetent( target );
+            level.last_alive_marker.alpha = 0.85;
+            level.last_alive_marker fadeovertime( 1 );
+            level.last_alive_marker.alpha = 0;
+        }
+        else if( level.teamCount[ "allies" ] > 1 && level.last_alive_marker.alpha != 0 )
+        {
+            level.last_alive_marker fadeovertime( 0.5 );
+            level.last_alive_marker.alpha = 0;
+        }
+
+        wait 1;
+    }
 }
 
 half_time_check()
